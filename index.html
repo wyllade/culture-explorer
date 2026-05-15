@@ -6,63 +6,42 @@
 <title>Mila — Explore the World's Living Cultures</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-/* ── RESET ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Outfit',sans-serif;background:#fdf8f0;color:#6b6375;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 button{font-family:'Outfit',sans-serif;cursor:pointer}
-
-/* ── TOKENS ── */
+svg{display:inline-block;vertical-align:middle}
 :root{
-  --ink:#1a1208;
-  --cream:#fdf8f0;
-  --cream2:#f5ede0;
-  --cream3:#ede3d4;
-  --text:#6b6375;
-  --text-h:#08060d;
-  --text2:#5c4d35;
-  --text3:#9c8a70;
+  --ink:#1a1208;--cream:#fdf8f0;--cream2:#f5ede0;--cream3:#ede3d4;
+  --text:#6b6375;--text-h:#08060d;--text2:#5c4d35;--text3:#9c8a70;
   --border:#e5e4e7;
-  --saffron:#f5a623;
-  --saffron-l:#fef3d8;
-  --cobalt:#1b4fa8;
-  --cobalt-l:#dce8ff;
-  --jade:#1a7a5a;
-  --jade-l:#d4f0e5;
-  --coral:#e84c2b;
-  --coral-l:#fde8e3;
-  --violet:#6b3fa0;
-  --violet-l:#ecdeff;
-  --rose:#c23773;
-  --rose-l:#fce4ef;
+  --saffron:#f5a623;--saffron-l:#fef3d8;
+  --cobalt:#1b4fa8;--cobalt-l:#dce8ff;
+  --jade:#1a7a5a;--jade-l:#d4f0e5;
+  --coral:#e84c2b;--coral-l:#fde8e3;
+  --violet:#6b3fa0;--violet-l:#ecdeff;
+  --rose:#c23773;--rose-l:#fce4ef;
   --r:10px;--r-lg:18px;--r-xl:28px;
   --shadow-sm:0 2px 8px rgba(26,18,8,.08);
   --shadow-md:0 4px 20px rgba(26,18,8,.12);
   --shadow-lg:0 12px 48px rgba(26,18,8,.18);
 }
-
-/* ── LAYOUT ── */
 .container{max-width:1120px;margin:0 auto;padding:0 28px}
-.page{display:none}
-.page.active{display:block}
+.page{display:none}.page.active{display:block}
 
-/* ── BUTTONS ── */
+/* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:var(--r);font-size:14px;font-weight:600;border:2px solid transparent;transition:all .18s;white-space:nowrap;cursor:pointer;font-family:'Outfit',sans-serif}
-.btn-ink{background:var(--ink);color:var(--cream);border-color:var(--ink)}
-.btn-ink:hover{background:#3d2e15;transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.btn-saffron{background:var(--saffron);color:var(--ink);border-color:var(--saffron)}
-.btn-saffron:hover{background:#e09400;transform:translateY(-2px)}
-.btn-cobalt{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
-.btn-cobalt:hover{background:#163d88;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--text-h);border-color:rgba(26,18,8,.2)}
-.btn-outline:hover{background:var(--cream2)}
-.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
-.btn-ghost:hover{background:var(--cream2)}
+.btn-ink{background:var(--ink);color:var(--cream);border-color:var(--ink)}.btn-ink:hover{background:#3d2e15;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-saffron{background:var(--saffron);color:var(--ink);border-color:var(--saffron)}.btn-saffron:hover{background:#e09400;transform:translateY(-2px)}
+.btn-cobalt{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}.btn-cobalt:hover{background:#163d88;transform:translateY(-2px)}
+.btn-jade{background:var(--jade);color:#fff;border-color:var(--jade)}.btn-jade:hover{background:#145e45;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--text-h);border-color:rgba(26,18,8,.2)}.btn-outline:hover{background:var(--cream2)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}.btn-ghost:hover{background:var(--cream2)}
 .btn-sm{padding:7px 14px;font-size:13px;border-radius:8px}
 .btn-lg{padding:16px 36px;font-size:16px;border-radius:var(--r-lg)}
 
-/* ── BADGES ── */
+/* BADGES */
 .badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;line-height:1}
 .badge-saffron{background:var(--saffron-l);color:#8a5500}
 .badge-cobalt{background:var(--cobalt-l);color:var(--cobalt)}
@@ -71,7 +50,7 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 .badge-violet{background:var(--violet-l);color:var(--violet)}
 .badge-rose{background:var(--rose-l);color:var(--rose)}
 
-/* ── NAV ── */
+/* NAV */
 .navbar{position:sticky;top:0;z-index:200;background:rgba(253,248,240,.94);backdrop-filter:blur(20px);border-bottom:1.5px solid var(--border)}
 .navbar-inner{height:66px;display:flex;align-items:center;gap:8px}
 .navbar-logo{font-family:'Fraunces',serif;font-size:21px;font-weight:900;color:var(--text-h);margin-right:12px}
@@ -88,21 +67,20 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mobile-drawer{display:none;flex-direction:column;padding:10px 18px 20px;border-top:1px solid var(--border);gap:3px}
 .mobile-drawer.open{display:flex}
-.mdlink{font-size:15px;font-weight:500;color:var(--text);padding:11px 14px;border-radius:var(--r);cursor:pointer;background:none;border:none;text-align:left;font-family:'Outfit',sans-serif;transition:background .15s}
+.mdlink{font-size:15px;font-weight:500;color:var(--text);padding:11px 14px;border-radius:var(--r);cursor:pointer;background:none;border:none;text-align:left;font-family:'Outfit',sans-serif;transition:background .15s;display:flex;align-items:center;gap:10px}
 .mdlink:hover{background:var(--cream2);color:var(--text-h)}
+.mdlink svg{flex-shrink:0}
 
-/* ── PROGRESS BAR ── */
+/* PROGRESS */
 .progress{height:5px;background:var(--cream3);border-radius:3px;overflow:hidden}
 .progress-bar{height:100%;border-radius:3px;background:var(--jade);transition:width .6s ease}
 
-/* ── INPUT ── */
+/* INPUT */
 .input{width:100%;padding:11px 16px;border-radius:var(--r);border:1.5px solid var(--border);background:#fff;font-size:15px;color:var(--text-h);outline:none;transition:border-color .15s,box-shadow .15s;font-family:'Outfit',sans-serif}
 .input:focus{border-color:#aa3bff;box-shadow:0 0 0 3px rgba(170,59,255,.1)}
 .input::placeholder{color:var(--text3)}
 
-/* ════════════════════════
-   HOME PAGE
-═══════════════════════════ */
+/* HOME */
 .hero{position:relative;overflow:hidden;padding:88px 0 0;background:var(--cream)}
 .hero-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
 .hero-blob-a{width:520px;height:520px;top:-100px;right:-60px;background:var(--saffron-l)}
@@ -116,13 +94,15 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
 .hero-proof{display:flex;align-items:center;gap:12px}
 .proof-stack{display:flex}
-.proof-av{width:32px;height:32px;border-radius:50%;border:2.5px solid var(--cream);background:var(--saffron-l);display:flex;align-items:center;justify-content:center;font-size:15px;margin-left:-8px}
+.proof-av{width:32px;height:32px;border-radius:50%;border:2.5px solid var(--cream);background:var(--saffron-l);display:flex;align-items:center;justify-content:center;margin-left:-8px}
 .proof-av:first-child{margin-left:0}
+.proof-av svg{width:16px;height:16px}
 .proof-label{font-size:13px;color:var(--text)}
 .proof-label strong{color:var(--text-h)}
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:360px}
-.hero-globe{width:340px;height:340px;border-radius:50%;background:linear-gradient(135deg,var(--cobalt-l),var(--saffron-l));border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:128px;animation:floatY 5s ease-in-out infinite}
-.fc{position:absolute;background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:7px 14px;font-size:13px;font-weight:600;box-shadow:var(--shadow-md);white-space:nowrap}
+.hero-globe{width:340px;height:340px;border-radius:50%;background:linear-gradient(135deg,var(--cobalt-l),var(--saffron-l));border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;animation:floatY 5s ease-in-out infinite}
+.fc{position:absolute;background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:7px 14px;font-size:13px;font-weight:600;box-shadow:var(--shadow-md);white-space:nowrap;display:flex;align-items:center;gap:7px}
+.fc svg{width:16px;height:16px;flex-shrink:0}
 .fc-1{top:4%;left:0;animation:floatY 4s .5s ease-in-out infinite}
 .fc-2{top:20%;right:0;animation:floatY 4.5s 1s ease-in-out infinite}
 .fc-3{bottom:24%;left:-4%;animation:floatY 5s .2s ease-in-out infinite}
@@ -131,35 +111,35 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 
 .stats-strip{background:var(--ink);padding:22px 0}
 .stats-row{display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px}
+.stat-item{text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.stat-item svg{opacity:.5}
 .stat-val{font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--saffron);line-height:1}
 .stat-lbl{font-size:12px;font-weight:500;color:rgba(253,248,240,.55);margin-top:3px}
 
-.section{padding:88px 0}
-.section-sm{padding:56px 0}
-.section-alt{background:var(--cream2)}
+.section{padding:88px 0}.section-sm{padding:56px 0}.section-alt{background:var(--cream2)}
 .caption{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3)}
 .display-md{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,44px);font-weight:700;line-height:1.05;letter-spacing:-1px;color:var(--text-h)}
 
 .theme-blocks{display:flex;border-radius:var(--r-xl);border:2px solid var(--ink);overflow:hidden}
-.theme-block{flex:1;padding:18px 12px;text-align:center;font-family:'Fraunces',serif;font-size:13px;font-weight:700;border-right:2px solid var(--ink);cursor:pointer;transition:flex .3s;background:none;border-top:none;border-bottom:none;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--ink)}
+.theme-block{flex:1;padding:18px 12px;text-align:center;font-family:'Fraunces',serif;font-size:13px;font-weight:700;border-right:2px solid var(--ink);cursor:pointer;transition:flex .3s;background:none;border-top:none;border-bottom:none;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink)}
 .theme-block:last-child{border-right:none}
 .theme-block:hover{flex:2}
-.theme-block .te{font-size:24px}
+.theme-block svg{width:22px;height:22px}
 
-/* ── FEATURES ── */
 .features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .feat-card{background:#fff;border-radius:var(--r-lg);border:1.5px solid var(--border);padding:28px;transition:transform .2s,box-shadow .2s}
 .feat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.feat-icon{width:52px;height:52px;border-radius:var(--r-lg);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.feat-icon{width:52px;height:52px;border-radius:var(--r-lg);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.feat-icon svg{width:24px;height:24px}
 .feat-card h3{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--text-h);margin-bottom:7px}
 .feat-card p{font-size:14px;color:var(--text2);line-height:1.65}
 
-/* ── CARDS GRID ── */
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
 .ccard{display:block;background:#fff;border-radius:var(--r-lg);border:1.5px solid var(--border);overflow:hidden;transition:all .2s;cursor:pointer;box-shadow:var(--shadow-sm)}
 .ccard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
 .ccard-thumb{height:176px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.ccard-flag{font-size:64px;line-height:1}
+.ccard-flag{display:flex;align-items:center;justify-content:center}
+.ccard-flag svg{width:72px;height:72px}
 .ccard-pct{position:absolute;bottom:8px;right:10px;background:rgba(255,255,255,.92);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:700;color:var(--jade);border:1px solid rgba(26,122,90,.25)}
 .ccard-new{position:absolute;top:8px;right:10px;background:var(--saffron);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:700;border:1.5px solid var(--ink)}
 .ccard-body{padding:16px 18px 18px}
@@ -167,15 +147,17 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 .ccard-title{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--text-h);margin-bottom:5px}
 .ccard-desc{font-size:13px;color:var(--text2);line-height:1.55;margin-bottom:12px}
 .ccard-foot{display:flex;align-items:center;justify-content:space-between}
-.ccard-stats{display:flex;gap:10px;font-size:12px;color:var(--text3)}
-.ccard-arrow{font-size:15px;color:var(--text3);transition:transform .15s,color .15s}
-.ccard:hover .ccard-arrow{transform:translateX(4px);color:#aa3bff}
+.ccard-stats{display:flex;gap:12px;font-size:12px;color:var(--text3);align-items:center}
+.ccard-stats span{display:flex;align-items:center;gap:4px}
+.ccard-stats svg{width:13px;height:13px}
+.ccard-arrow svg{width:15px;height:15px;color:var(--text3);transition:transform .15s,color .15s}
+.ccard:hover .ccard-arrow svg{transform:translateX(4px);color:#aa3bff}
 .card-skeleton{height:310px;border-radius:var(--r-lg);background:linear-gradient(90deg,var(--cream2) 25%,var(--cream3) 50%,var(--cream2) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
-/* ── SEARCH ── */
 .search-wrap{position:relative;max-width:460px}
-.search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none}
+.search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none;display:flex}
+.search-icon svg{width:16px;height:16px;color:var(--text3)}
 .search-wrap .input{padding-left:40px;padding-right:38px}
 .search-clear{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:19px;color:var(--text3);cursor:pointer;line-height:1;transition:color .15s}
 .search-clear:hover{color:var(--text-h)}
@@ -184,58 +166,61 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 .fpill:hover{border-color:rgba(170,59,255,.4);color:#aa3bff}
 .fpill.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
 
-/* ── TESTIMONIALS ── */
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:48px}
 .testi-card{background:#fff;border-radius:var(--r-lg);border:1.5px solid var(--border);padding:24px}
 .testi-stars{color:var(--saffron);font-size:14px;letter-spacing:2px;margin-bottom:12px}
 .testi-quote{font-size:15px;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:18px}
 .testi-author{display:flex;align-items:center;gap:10px}
-.testi-av{width:36px;height:36px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:17px}
+.testi-av{width:36px;height:36px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.testi-av svg{width:18px;height:18px}
 .testi-name{font-weight:600;font-size:14px;color:var(--text-h)}
 .testi-meta{font-size:12px;color:var(--text3)}
 
-/* ── CTA BANNER ── */
 .cta-banner{background:var(--cobalt);border-radius:var(--r-xl);padding:52px 56px;display:flex;align-items:center;justify-content:space-between;gap:36px;position:relative;overflow:hidden}
-.cta-banner::after{content:'🌍';position:absolute;right:-10px;bottom:-40px;font-size:190px;opacity:.07;pointer-events:none;line-height:1}
+.cta-banner-icon{position:absolute;right:-10px;bottom:-40px;opacity:.07;pointer-events:none}
+.cta-banner-icon svg{width:190px;height:190px;color:#fff}
 .cta-banner h2{font-family:'Fraunces',serif;font-size:clamp(24px,3vw,36px);font-weight:900;color:#fff;margin-bottom:8px}
 .cta-banner p{color:rgba(255,255,255,.72);font-size:16px}
 
-/* ═════════════════════════
-   EXPLORE PAGE
-══════════════════════════ */
+/* EXPLORE */
 .page-hero{padding:52px 0;position:relative;overflow:hidden}
 .page-hero-cobalt{background:var(--cobalt)}
-.page-hero-bg-icon{position:absolute;right:4%;top:50%;transform:translateY(-50%);font-size:140px;opacity:.1;line-height:1;pointer-events:none}
+.page-hero-bg-icon{position:absolute;right:4%;top:50%;transform:translateY(-50%);opacity:.08;pointer-events:none}
+.page-hero-bg-icon svg{width:140px;height:140px;color:#fff}
 .page-hero h1{font-family:'Fraunces',serif;color:#fff;font-size:clamp(32px,5vw,56px);font-weight:900;margin:0 0 10px;letter-spacing:-1px}
 .page-hero p{color:rgba(255,255,255,.72);font-size:16px;max-width:480px}
 
-/* ═════════════════════════
-   COUNTRY DETAIL PAGE
-══════════════════════════ */
+/* COUNTRY */
 .country-hero{padding:56px 0 0;position:relative;overflow:hidden}
 .country-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,13,.88),rgba(8,6,13,.1))}
 .country-hero-content{position:relative;z-index:1;padding-bottom:40px}
 .country-hero h1{font-family:'Fraunces',serif;font-size:clamp(40px,7vw,72px);font-weight:900;color:#fff;margin:0 0 6px;letter-spacing:-2px}
+.country-flag-icon{width:72px;height:72px;display:flex;align-items:center;justify-content:center}
+.country-flag-icon svg{width:64px;height:64px}
 .sticky-tabs{position:sticky;top:66px;z-index:90;background:var(--cream);border-bottom:1.5px solid var(--border)}
 .tabs-scroll{display:flex;overflow-x:auto;max-width:1120px;margin:0 auto;padding:0 28px;scrollbar-width:none}
-.ctab{flex-shrink:0;padding:16px 18px;background:none;border:none;border-bottom:3px solid transparent;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;white-space:nowrap;transition:all .15s}
+.ctab{flex-shrink:0;padding:16px 18px;background:none;border:none;border-bottom:3px solid transparent;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:7px}
+.ctab svg{width:15px;height:15px}
 .ctab:hover{color:var(--text-h)}
 .ctab.active{color:var(--cobalt);border-bottom-color:var(--cobalt)}
 .topic-section{display:none;padding:52px 0 80px}
 .topic-section.active{display:block}
+.topic-icon{width:64px;height:64px;border-radius:var(--r-lg);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.topic-icon svg{width:30px;height:30px}
 
-/* ═════════════════════════
-   QUIZ PAGE
-══════════════════════════ */
+/* QUIZ */
 .quiz-wrap{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:60px 28px}
 .quiz-inner{max-width:600px;width:100%}
 .diff-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
 .diff-card{padding:20px 24px;border-radius:var(--r-lg);text-align:center;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .15s;min-width:140px}
 .diff-card.active,.diff-card:hover{border-color:var(--ink);background:var(--saffron-l)}
-.diff-emoji{font-size:28px;margin-bottom:6px}
+.diff-icon{display:flex;justify-content:center;margin-bottom:8px}
+.diff-icon svg{width:28px;height:28px}
 .diff-label{font-family:'Fraunces',serif;font-weight:700;font-size:16px;margin-bottom:3px;color:var(--text-h)}
 .diff-desc{font-size:12px;color:var(--text2)}
-.q-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--text2);font-weight:500;margin-bottom:10px}
+.q-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--text2);font-weight:500;margin-bottom:10px;align-items:center}
+.q-meta-xp{display:flex;align-items:center;gap:5px;color:var(--jade);font-weight:700}
+.q-meta-xp svg{width:14px;height:14px}
 .q-card{background:#fff;border-radius:var(--r-xl);border:1.5px solid var(--border);padding:32px;margin-bottom:20px;box-shadow:var(--shadow-sm)}
 .q-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:var(--cobalt);margin-bottom:10px}
 .q-text{font-family:'Fraunces',serif;font-size:clamp(18px,2.5vw,26px);font-weight:700;line-height:1.3;color:var(--text-h)}
@@ -252,45 +237,61 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 .result-score{font-family:'Fraunces',serif;font-size:52px;font-weight:900;line-height:1}
 .result-total{font-size:16px;color:var(--text2)}
 
-/* ═════════════════════════
-   DASHBOARD
-══════════════════════════ */
+/* DASHBOARD */
 .dash-hero{background:linear-gradient(135deg,var(--cobalt),var(--violet));padding:52px 0}
-.dash-avatar{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.15);border:3px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:36px}
+.dash-avatar{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.15);border:3px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center}
+.dash-avatar svg{width:36px;height:36px;color:#fff}
 .dash-stat-val{font-family:'Fraunces',serif;font-size:28px;font-weight:900;line-height:1}
+.dash-stat-icon{display:flex;justify-content:center;margin-bottom:4px;opacity:.6}
+.dash-stat-icon svg{width:18px;height:18px;color:#fff}
 .panel{background:#fff;border-radius:var(--r-xl);border:1.5px solid var(--border);padding:28px}
-.panel h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-h);margin-bottom:20px}
+.panel-title{display:flex;align-items:center;gap:8px;font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-h);margin-bottom:20px}
+.panel-title svg{width:20px;height:20px}
 
-/* ═════════════════════════
-   AUTH PAGES
-══════════════════════════ */
+/* AUTH */
 .auth-wrap{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:60px 28px}
 .auth-box{max-width:420px;width:100%}
 .auth-box h1{font-family:'Fraunces',serif;font-size:40px;font-weight:900;color:var(--text-h);margin-bottom:8px}
 .form-group{display:flex;flex-direction:column;gap:14px;margin-bottom:4px}
 .error-msg{background:var(--coral-l);border:1px solid var(--coral);border-radius:var(--r);padding:10px 14px;font-size:14px;color:#a82e14;margin-bottom:16px}
-.success-msg{background:var(--jade-l);border:1px solid var(--jade);border-radius:var(--r);padding:10px 14px;font-size:14px;color:var(--jade);margin-bottom:16px}
 
-/* ═════════════════════════
-   FOOTER
-══════════════════════════ */
+/* FOOTER */
 .site-footer{background:var(--ink);color:var(--cream);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:52px}
-.footer-logo{font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-bottom:12px}
+.footer-logo{font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.footer-logo svg{width:22px;height:22px;color:var(--coral)}
 .footer-brand p{font-size:14px;color:rgba(253,248,240,.5);line-height:1.75}
 .footer-col h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:rgba(253,248,240,.4);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:rgba(253,248,240,.65);margin-bottom:10px;cursor:pointer;transition:color .15s}
+.footer-col a{display:flex;align-items:center;gap:7px;font-size:14px;color:rgba(253,248,240,.65);margin-bottom:10px;cursor:pointer;transition:color .15s}
+.footer-col a svg{width:13px;height:13px;flex-shrink:0}
 .footer-col a:hover{color:var(--saffron)}
 .footer-bottom{border-top:1px solid rgba(253,248,240,.1);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;max-width:1120px;width:100%}
 .footer-bottom p{font-size:13px;color:rgba(253,248,240,.3)}
+.footer-bottom-icon{display:flex;align-items:center;gap:6px}
+.footer-bottom-icon svg{width:14px;height:14px;color:rgba(253,248,240,.3)}
 
-/* ═════════════════════════
-   RESPONSIVE
-══════════════════════════ */
+/* NAV AVATAR */
+.nav-av-wrap{width:36px;height:36px;border-radius:50%;background:var(--saffron-l);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.nav-av-wrap svg{width:18px;height:18px}
+
+/* NO RESULTS ICON */
+.empty-icon{display:flex;justify-content:center;margin-bottom:12px}
+.empty-icon svg{width:64px;height:64px;color:var(--text3)}
+
+/* BADGE ICONS */
+.badge-icon{display:flex;align-items:center;gap:4px}
+.badge-icon svg{width:12px;height:12px}
+
+/* country meta pills */
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.8);background:rgba(0,0,0,.25);padding:4px 12px;border-radius:999px}
+.meta-pill svg{width:13px;height:13px;flex-shrink:0}
+
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:40px}
   .hero-visual{min-height:260px}
-  .hero-globe{width:240px;height:240px;font-size:88px}
+  .hero-globe{width:240px;height:240px}
+  .hero-globe svg{width:88px;height:88px}
   .cta-banner{flex-direction:column;padding:36px 28px;text-align:center}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
   .navbar-links,.navbar-actions{display:none}
@@ -298,8 +299,7 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
   .answers-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
-  .container{padding:0 18px}
-  .section{padding:64px 0}
+  .container{padding:0 18px}.section{padding:64px 0}
   .hero-ctas{flex-direction:column}
   .cards-grid{grid-template-columns:1fr 1fr;gap:14px}
   .features-grid{grid-template-columns:1fr}
@@ -309,10 +309,58 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
 </head>
 <body>
 
-<!-- ═══════ NAVBAR ═══════ -->
+<!-- SVG ICON DEFS (reusable symbols) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-globe"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="ic-book"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+  <symbol id="ic-brain"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></symbol>
+  <symbol id="ic-chart"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6"  y1="20" x2="6"  y2="14"/></symbol>
+  <symbol id="ic-medal"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+  <symbol id="ic-fire"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="ic-map"         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9"  y1="3"  x2="9"  y2="18"/><line x1="15" y1="6"  x2="15" y2="21"/></symbol>
+  <symbol id="ic-history"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><polyline points="12 7 12 12 15 15"/></symbol>
+  <symbol id="ic-art"         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5"  cy="7.5"  r=".5" fill="currentColor"/><circle cx="6.5"  cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+  <symbol id="ic-food"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6"  y1="1" x2="6"  y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></symbol>
+  <symbol id="ic-festival"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12v0c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11v0c-.1.6-.53 1.1-1.12 1.3L17 15.53"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98v0C9.61 4.9 9.1 5.33 8.9 5.92L8.46 7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2z"/></symbol>
+  <symbol id="ic-building"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="16" height="20" x="4"  y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8  6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8  10h.01"/><path d="M8  14h.01"/></symbol>
+  <symbol id="ic-story"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="ic-language"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+  <symbol id="ic-quiz"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="ic-user"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="ic-check"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="ic-x"           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6"  y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="ic-search"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="ic-zap"         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="ic-flag"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="ic-compass"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="ic-star"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="ic-sword"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></symbol>
+  <symbol id="ic-castle"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 20v-9H2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z"/><path d="M18 11V4h-4v2h-4V4H6v7"/><path d="M15 22v-4a3 3 0 0 0-6 0v4"/></symbol>
+  <symbol id="ic-feather"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8"  x2="2"  y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></symbol>
+  <symbol id="ic-sparkle"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></symbol>
+  <symbol id="ic-target"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="ic-trophy"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="ic-send"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="ic-signin"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></symbol>
+  <symbol id="ic-home"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="ic-explore"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="ic-dashboard"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3"  y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></symbol>
+  <symbol id="ic-signout"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+  <symbol id="ic-users"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="ic-link"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="ic-mail"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="ic-info"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+  <symbol id="ic-aperture"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="14.31" y1="8"  x2="20.05" y2="17.94"/><line x1="9.69"  y1="8"  x2="21.17" y2="8"/><line x1="7.38"  y1="12" x2="13.12" y2="2.06"/><line x1="9.69"  y1="16" x2="3.95"  y2="6.06"/><line x1="14.31" y1="16" x2="2.83"  y2="16"/><line x1="16.62" y1="12" x2="10.88" y2="21.94"/></symbol>
+</svg>
+
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="navbar-inner container">
-    <div class="navbar-logo">Mila<span>Quest</span></div>
+    <div class="navbar-logo">
+      <svg width="22" height="22"><use href="#ic-aperture"/></svg>
+      Mila
+    </div>
     <nav class="nav-links">
       <button class="nlink active" onclick="goto('home')">Home</button>
       <button class="nlink" onclick="goto('explore')">Explore</button>
@@ -320,12 +368,14 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
       <button class="nlink" id="nav-dashboard" style="display:none" onclick="goto('dashboard')">My Progress</button>
     </nav>
     <div class="navbar-actions">
-      <div id="nav-auth-out">
+      <div id="nav-auth-out" style="display:flex;gap:8px">
         <button class="btn btn-ghost btn-sm" onclick="goto('login')">Sign In</button>
         <button class="btn btn-saffron btn-sm" onclick="goto('register')">Get Started</button>
       </div>
       <div id="nav-auth-in" style="display:none;align-items:center;gap:8px">
-        <div id="nav-avatar" style="width:36px;height:36px;border-radius:50%;background:var(--saffron-l);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer" onclick="goto('dashboard')">🌍</div>
+        <div class="nav-av-wrap" id="nav-avatar" onclick="goto('dashboard')">
+          <svg><use href="#ic-user"/></svg>
+        </div>
         <button class="btn btn-ghost btn-sm" onclick="logout()">Sign Out</button>
       </div>
     </div>
@@ -334,96 +384,186 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
     </button>
   </div>
   <div class="mobile-drawer" id="mobile-drawer">
-    <button class="mdlink" onclick="goto('home');toggleMenu()">🏠 Home</button>
-    <button class="mdlink" onclick="goto('explore');toggleMenu()">🌍 Explore</button>
-    <button class="mdlink" onclick="goto('quiz');toggleMenu()">🧠 Quiz</button>
-    <button class="mdlink" id="mob-dashboard" style="display:none" onclick="goto('dashboard');toggleMenu()">📊 My Progress</button>
+    <button class="mdlink" onclick="goto('home');toggleMenu()">
+      <svg width="17" height="17"><use href="#ic-home"/></svg> Home
+    </button>
+    <button class="mdlink" onclick="goto('explore');toggleMenu()">
+      <svg width="17" height="17"><use href="#ic-globe"/></svg> Explore
+    </button>
+    <button class="mdlink" onclick="goto('quiz');toggleMenu()">
+      <svg width="17" height="17"><use href="#ic-quiz"/></svg> Quiz
+    </button>
+    <button class="mdlink" id="mob-dashboard" style="display:none" onclick="goto('dashboard');toggleMenu()">
+      <svg width="17" height="17"><use href="#ic-dashboard"/></svg> My Progress
+    </button>
     <hr style="border:none;border-top:1px solid var(--border);margin:8px 0">
     <div id="mob-auth-out">
-      <button class="mdlink" onclick="goto('login');toggleMenu()">Sign In</button>
-      <button class="mdlink" style="background:var(--saffron);color:var(--ink);font-weight:700;text-align:center;border:2px solid var(--ink);border-radius:var(--r);margin-top:6px" onclick="goto('register');toggleMenu()">Get Started →</button>
+      <button class="mdlink" onclick="goto('login');toggleMenu()">
+        <svg width="17" height="17"><use href="#ic-signin"/></svg> Sign In
+      </button>
+      <button class="mdlink" style="background:var(--saffron);color:var(--ink);font-weight:700;border:2px solid var(--ink);border-radius:var(--r);margin-top:6px;justify-content:center" onclick="goto('register');toggleMenu()">
+        Get Started
+      </button>
     </div>
     <div id="mob-auth-in" style="display:none">
-      <button class="mdlink" onclick="logout();toggleMenu()">Sign Out</button>
+      <button class="mdlink" onclick="logout();toggleMenu()">
+        <svg width="17" height="17"><use href="#ic-signout"/></svg> Sign Out
+      </button>
     </div>
   </div>
 </header>
 
-<!-- ═══════ HOME ═══════ -->
+<!-- HOME -->
 <div id="page-home" class="page active">
-
   <section class="hero">
     <div class="hero-blob hero-blob-a"></div>
     <div class="hero-blob hero-blob-b"></div>
     <div class="container hero-inner">
       <div>
-        <div class="hero-pill">✨ 40+ Cultures · 500+ Lessons</div>
+        <div class="hero-pill">
+          <svg width="14" height="14"><use href="#ic-sparkle"/></svg>
+          40+ Cultures · 500+ Lessons
+        </div>
         <h1 class="hero-title">Discover<br/><em>Living</em> <span>Cultures</span></h1>
         <p class="hero-desc">Explore traditions, history, arts, food, and stories from every corner of the globe — with quizzes that make learning unforgettable.</p>
         <div class="hero-ctas">
-          <button class="btn btn-ink btn-lg" onclick="goto('explore')">Start Exploring →</button>
+          <button class="btn btn-ink btn-lg" onclick="goto('explore')">
+            Start Exploring
+            <svg width="16" height="16"><use href="#ic-arrow-right"/></svg>
+          </button>
           <button class="btn btn-ghost btn-lg" onclick="goto('quiz')">Take a Quiz</button>
         </div>
         <div class="hero-proof">
           <div class="proof-stack">
-            <div class="proof-av">🧑</div><div class="proof-av">👩</div><div class="proof-av">👦</div><div class="proof-av">🧕</div><div class="proof-av">👨</div>
+            <div class="proof-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5c4d35" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <div class="proof-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5c4d35" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <div class="proof-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5c4d35" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <div class="proof-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5c4d35" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <div class="proof-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5c4d35" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           </div>
           <span class="proof-label"><strong>12,000+ learners</strong> exploring right now</span>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-globe">🌏</div>
-        <div class="fc fc-1">🇯🇵 Japan</div>
-        <div class="fc fc-2">🇮🇳 India</div>
-        <div class="fc fc-3">🇲🇦 Morocco</div>
-        <div class="fc fc-4">🇧🇷 Brazil</div>
+        <div class="hero-globe">
+          <svg width="128" height="128" viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="fc fc-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c23773" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          Japan
+        </div>
+        <div class="fc fc-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          India
+        </div>
+        <div class="fc fc-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a7a5a" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          Morocco
+        </div>
+        <div class="fc fc-4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1b4fa8" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          Brazil
+        </div>
       </div>
     </div>
   </section>
 
   <div class="stats-strip">
     <div class="container stats-row">
-      <div style="text-align:center"><div class="stat-val">40+</div><div class="stat-lbl">Cultures</div></div>
-      <div style="text-align:center"><div class="stat-val">500+</div><div class="stat-lbl">Lessons</div></div>
-      <div style="text-align:center"><div class="stat-val">2,000+</div><div class="stat-lbl">Quiz Questions</div></div>
-      <div style="text-align:center"><div class="stat-val">12K+</div><div class="stat-lbl">Active Learners</div></div>
+      <div class="stat-item">
+        <div class="dash-stat-icon" style="opacity:.45"><svg width="18" height="18" style="color:var(--saffron)"><use href="#ic-globe"/></svg></div>
+        <div class="stat-val">40+</div><div class="stat-lbl">Cultures</div>
+      </div>
+      <div class="stat-item">
+        <div class="dash-stat-icon" style="opacity:.45"><svg width="18" height="18" style="color:var(--saffron)"><use href="#ic-book"/></svg></div>
+        <div class="stat-val">500+</div><div class="stat-lbl">Lessons</div>
+      </div>
+      <div class="stat-item">
+        <div class="dash-stat-icon" style="opacity:.45"><svg width="18" height="18" style="color:var(--saffron)"><use href="#ic-quiz"/></svg></div>
+        <div class="stat-val">2,000+</div><div class="stat-lbl">Quiz Questions</div>
+      </div>
+      <div class="stat-item">
+        <div class="dash-stat-icon" style="opacity:.45"><svg width="18" height="18" style="color:var(--saffron)"><use href="#ic-users"/></svg></div>
+        <div class="stat-val">12K+</div><div class="stat-lbl">Active Learners</div>
+      </div>
     </div>
   </div>
 
   <div class="section-sm container">
     <p class="caption" style="text-align:center;margin-bottom:22px">Browse by theme</p>
     <div class="theme-blocks">
-      <button class="theme-block" style="background:var(--saffron-l)" onclick="goto('explore')"><span class="te">🏛️</span>History</button>
-      <button class="theme-block" style="background:var(--coral-l)"   onclick="goto('explore')"><span class="te">🍜</span>Cuisine</button>
-      <button class="theme-block" style="background:var(--cobalt-l)"  onclick="goto('explore')"><span class="te">🎨</span>Arts</button>
-      <button class="theme-block" style="background:var(--jade-l)"    onclick="goto('explore')"><span class="te">🌸</span>Festivals</button>
-      <button class="theme-block" style="background:var(--violet-l)"  onclick="goto('explore')"><span class="te">🏗️</span>Architecture</button>
-      <button class="theme-block" style="background:var(--rose-l)"    onclick="goto('explore')"><span class="te">💬</span>Folklore</button>
+      <button class="theme-block" style="background:var(--saffron-l)" onclick="goto('explore')">
+        <svg><use href="#ic-history"/></svg>History
+      </button>
+      <button class="theme-block" style="background:var(--coral-l)" onclick="goto('explore')">
+        <svg><use href="#ic-food"/></svg>Cuisine
+      </button>
+      <button class="theme-block" style="background:var(--cobalt-l)" onclick="goto('explore')">
+        <svg><use href="#ic-art"/></svg>Arts
+      </button>
+      <button class="theme-block" style="background:var(--jade-l)" onclick="goto('explore')">
+        <svg><use href="#ic-festival"/></svg>Festivals
+      </button>
+      <button class="theme-block" style="background:var(--violet-l)" onclick="goto('explore')">
+        <svg><use href="#ic-building"/></svg>Architecture
+      </button>
+      <button class="theme-block" style="background:var(--rose-l)" onclick="goto('explore')">
+        <svg><use href="#ic-story"/></svg>Folklore
+      </button>
     </div>
   </div>
 
   <section class="section section-alt">
     <div class="container">
       <div style="text-align:center;max-width:520px;margin:0 auto 52px">
-        <p class="caption">Why CultureQuest</p>
+        <p class="caption">Why Mila</p>
         <h2 class="display-md" style="margin-top:10px;margin-bottom:14px">Learning cultures should feel like <em>travel</em></h2>
         <p style="font-size:16px;color:var(--text2);line-height:1.7">We combine storytelling, visual learning, and adaptive quizzes so every session feels like a voyage.</p>
       </div>
       <div class="features-grid">
-        <div class="feat-card"><div class="feat-icon" style="background:var(--cobalt-l)">📚</div><h3>Rich Story Lessons</h3><p>Curated, expert-written lessons covering history, myths, and daily life across every culture.</p></div>
-        <div class="feat-card"><div class="feat-icon" style="background:var(--saffron-l)">🧠</div><h3>Adaptive Quizzes</h3><p>Our quiz engine challenges you exactly where you need to grow, adapting to your knowledge level.</p></div>
-        <div class="feat-card"><div class="feat-icon" style="background:var(--jade-l)">📈</div><h3>Progress Tracking</h3><p>Visual dashboards show your streaks, completed topics, and how much of each culture you've mastered.</p></div>
-        <div class="feat-card"><div class="feat-icon" style="background:var(--coral-l)">🏅</div><h3>Earn Badges</h3><p>Collect culture badges, achievement medals, and streak trophies as you journey across countries.</p></div>
-        <div class="feat-card"><div class="feat-icon" style="background:var(--violet-l)">🌐</div><h3>40+ Countries</h3><p>From Japan to Morocco to Brazil — we cover cultures across every continent and region on earth.</p></div>
-        <div class="feat-card"><div class="feat-icon" style="background:var(--rose-l)">🔥</div><h3>Daily Streaks</h3><p>Build a habit with daily challenges and streak rewards that keep you coming back every single day.</p></div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--cobalt-l)"><svg><use href="#ic-book"/></svg></div>
+          <h3>Rich Story Lessons</h3>
+          <p>Curated, expert-written lessons covering history, myths, and daily life across every culture.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--saffron-l)"><svg><use href="#ic-brain"/></svg></div>
+          <h3>Adaptive Quizzes</h3>
+          <p>Our quiz engine challenges you exactly where you need to grow, adapting to your knowledge level.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--jade-l)"><svg><use href="#ic-chart"/></svg></div>
+          <h3>Progress Tracking</h3>
+          <p>Visual dashboards show your streaks, completed topics, and how much of each culture you've mastered.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--coral-l)"><svg><use href="#ic-medal"/></svg></div>
+          <h3>Earn Badges</h3>
+          <p>Collect culture badges, achievement medals, and streak trophies as you journey across countries.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--violet-l)"><svg><use href="#ic-globe"/></svg></div>
+          <h3>40+ Countries</h3>
+          <p>From Japan to Morocco to Brazil — we cover cultures across every continent and region on earth.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--rose-l)"><svg><use href="#ic-fire"/></svg></div>
+          <h3>Daily Streaks</h3>
+          <p>Build a habit with daily challenges and streak rewards that keep you coming back every single day.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section container">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:28px">
-      <div><p class="caption">Featured Cultures</p><h2 class="display-md" style="margin-top:8px">Start your journey</h2></div>
-      <button class="btn btn-outline" onclick="goto('explore')">View all 40+ →</button>
+      <div>
+        <p class="caption">Featured Cultures</p>
+        <h2 class="display-md" style="margin-top:8px">Start your journey</h2>
+      </div>
+      <button class="btn btn-outline" onclick="goto('explore')">View all 40+
+        <svg width="14" height="14"><use href="#ic-arrow-right"/></svg>
+      </button>
     </div>
     <div class="cards-grid" id="home-cards-grid"></div>
   </section>
@@ -435,9 +575,30 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
         <h2 class="display-md" style="margin-top:10px">People love their journey</h2>
       </div>
       <div class="testi-grid">
-        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-quote">"I learned more in two weeks on CultureQuest than from two actual trips to Japan. The stories are incredible."</p><div class="testi-author"><div class="testi-av" style="background:var(--saffron-l)">👩</div><div><div class="testi-name">Amara K.</div><div class="testi-meta">Nairobi · Japan Explorer</div></div></div></div>
-        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-quote">"The quiz engine is addictive. My streak is at 42 days and I've started three culture paths. Can't stop."</p><div class="testi-author"><div class="testi-av" style="background:var(--cobalt-l)">🧑</div><div><div class="testi-name">Marcus T.</div><div class="testi-meta">São Paulo · 3-Path Learner</div></div></div></div>
-        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-quote">"I use it with my students. They compete on quiz scores and beg for more assignments. That says everything."</p><div class="testi-author"><div class="testi-av" style="background:var(--jade-l)">👨</div><div><div class="testi-name">Priya M.</div><div class="testi-meta">Mumbai · Teacher</div></div></div></div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"I learned more in two weeks on Mila than from two actual trips to Japan. The stories are incredible."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:var(--saffron-l)"><svg><use href="#ic-user"/></svg></div>
+            <div><div class="testi-name">Amara K.</div><div class="testi-meta">Nairobi · Japan Explorer</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"The quiz engine is addictive. My streak is at 42 days and I've started three culture paths. Can't stop."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:var(--cobalt-l)"><svg><use href="#ic-user"/></svg></div>
+            <div><div class="testi-name">Marcus T.</div><div class="testi-meta">São Paulo · 3-Path Learner</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"I use it with my students. They compete on quiz scores and beg for more assignments. That says everything."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:var(--jade-l)"><svg><use href="#ic-user"/></svg></div>
+            <div><div class="testi-name">Priya M.</div><div class="testi-meta">Mumbai · Teacher</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -448,16 +609,19 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
         <h2>Ready to begin your<br/>cultural journey?</h2>
         <p>Free to start — explore Japan, India, Morocco and more today.</p>
       </div>
-      <button class="btn btn-saffron btn-lg" style="font-size:18px;padding:20px 48px;border-radius:var(--r-lg);flex-shrink:0" onclick="goto('register')">Start for Free →</button>
+      <div class="cta-banner-icon"><svg><use href="#ic-globe"/></svg></div>
+      <button class="btn btn-saffron btn-lg" style="font-size:18px;padding:20px 48px;border-radius:var(--r-lg);flex-shrink:0" onclick="goto('register')">
+        Start for Free
+        <svg width="18" height="18"><use href="#ic-arrow-right"/></svg>
+      </button>
     </div>
   </section>
+</div>
 
-</div><!-- /page-home -->
-
-<!-- ═══════ EXPLORE ═══════ -->
+<!-- EXPLORE -->
 <div id="page-explore" class="page">
   <div class="page-hero page-hero-cobalt">
-    <div class="page-hero-bg-icon">🗺️</div>
+    <div class="page-hero-bg-icon"><svg><use href="#ic-map"/></svg></div>
     <div class="container">
       <p class="caption" style="color:rgba(255,255,255,.55);margin-bottom:8px">40+ Cultures</p>
       <h1>Explore the World</h1>
@@ -468,7 +632,7 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
     <div class="container">
       <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:18px">
         <div class="search-wrap" style="flex:1;min-width:200px">
-          <span class="search-icon">🔍</span>
+          <span class="search-icon"><svg><use href="#ic-search"/></svg></span>
           <input class="input" id="explore-search" type="text" placeholder="Search cultures, topics, foods…" oninput="filterExplore()"/>
           <button class="search-clear" id="explore-clear" style="display:none" onclick="document.getElementById('explore-search').value='';filterExplore()">×</button>
         </div>
@@ -483,27 +647,32 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
       </div>
       <div class="cards-grid" id="explore-grid"></div>
       <div id="explore-empty" style="display:none;text-align:center;padding:88px 0">
-        <div style="font-size:64px;margin-bottom:12px">🌍</div>
+        <div class="empty-icon"><svg><use href="#ic-map"/></svg></div>
         <h3 style="font-family:'Fraunces',serif;font-size:24px;color:var(--text-h);margin-bottom:8px">No cultures found</h3>
         <p style="color:var(--text2)">Try different search terms or clear the filters.</p>
         <button class="btn btn-outline" style="margin-top:16px" onclick="document.getElementById('explore-search').value='';setRegionAll()">Clear filters</button>
       </div>
     </div>
   </section>
-</div><!-- /page-explore -->
+</div>
 
-<!-- ═══════ COUNTRY ═══════ -->
+<!-- COUNTRY -->
 <div id="page-country" class="page">
   <div id="country-hero" class="country-hero">
     <div class="country-hero-overlay"></div>
     <div class="container country-hero-content">
-      <button onclick="goto('explore')" style="font-size:13px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">← All Cultures</button>
+      <button onclick="goto('explore')" style="font-size:13px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;transition:color .15s;font-family:'Outfit',sans-serif" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        All Cultures
+      </button>
       <div style="display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap">
-        <span id="country-flag" style="font-size:72px">🇯🇵</span>
+        <div class="country-flag-icon" id="country-flag">
+          <svg><use href="#ic-flag"/></svg>
+        </div>
         <div>
           <h1 id="country-name">Japan</h1>
           <p id="country-region" style="color:rgba(255,255,255,.72);font-size:15px;margin-bottom:14px">Asia-Pacific</p>
-          <div id="country-meta" style="display:flex;gap:14px;flex-wrap:wrap"></div>
+          <div id="country-meta" style="display:flex;gap:10px;flex-wrap:wrap"></div>
         </div>
       </div>
     </div>
@@ -513,40 +682,62 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
       <span style="font-weight:600;font-size:14px;flex-shrink:0">Your progress</span>
       <div class="progress" style="flex:1;min-width:100px"><div class="progress-bar" id="country-progress-bar" style="width:0%"></div></div>
       <span id="country-pct" style="font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--jade);flex-shrink:0">0%</span>
-      <button class="btn btn-cobalt btn-sm" id="country-quiz-btn">Take Quiz →</button>
+      <button class="btn btn-cobalt btn-sm" id="country-quiz-btn">
+        <svg width="13" height="13"><use href="#ic-quiz"/></svg>
+        Take Quiz
+      </button>
     </div>
   </div>
   <div class="sticky-tabs">
     <div class="tabs-scroll" id="country-tabs"></div>
   </div>
   <div class="container" id="country-content"></div>
-</div><!-- /page-country -->
+</div>
 
-<!-- ═══════ QUIZ ═══════ -->
+<!-- QUIZ -->
 <div id="page-quiz" class="page">
-  <!-- Start screen -->
   <div id="quiz-start" class="quiz-wrap">
     <div class="quiz-inner" style="text-align:center">
-      <span id="quiz-edition-badge" style="display:inline-block;background:var(--saffron);color:var(--ink);font-size:13px;font-weight:700;padding:5px 14px;border-radius:999px;border:2px solid var(--ink);margin-bottom:20px">🇯🇵 Japan Edition</span>
+      <span id="quiz-edition-badge" style="display:inline-flex;align-items:center;gap:7px;background:var(--saffron);color:var(--ink);font-size:13px;font-weight:700;padding:5px 14px;border-radius:999px;border:2px solid var(--ink);margin-bottom:20px">
+        <svg width="14" height="14"><use href="#ic-flag"/></svg>
+        Japan Edition
+      </span>
       <h1 style="font-family:'Fraunces',serif;font-size:clamp(36px,6vw,64px);font-weight:900;color:var(--text-h);margin-bottom:16px;letter-spacing:-2px">Test Your<br/><em style="color:var(--coral)">Knowledge</em></h1>
-      <p style="font-size:17px;color:var(--text2);margin-bottom:40px">10 questions covering history, culture, food & folklore.<br/>Choose your difficulty:</p>
+      <p style="font-size:17px;color:var(--text2);margin-bottom:40px">10 questions covering history, culture, food &amp; folklore.<br/>Choose your difficulty:</p>
       <div class="diff-grid">
-        <div class="diff-card active" id="d-easy" onclick="setDiff('easy')"><div class="diff-emoji">🌸</div><div class="diff-label">Beginner</div><div class="diff-desc">General knowledge</div></div>
-        <div class="diff-card"        id="d-medium" onclick="setDiff('medium')"><div class="diff-emoji">⚔️</div><div class="diff-label">Explorer</div><div class="diff-desc">Some depth required</div></div>
-        <div class="diff-card"        id="d-hard"   onclick="setDiff('hard')"><div class="diff-emoji">🏯</div><div class="diff-label">Scholar</div><div class="diff-desc">Deep cultural knowledge</div></div>
+        <div class="diff-card active" id="d-easy" onclick="setDiff('easy')">
+          <div class="diff-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="1.8"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="m8 12 3 3 5-5"/></svg></div>
+          <div class="diff-label">Beginner</div><div class="diff-desc">General knowledge</div>
+        </div>
+        <div class="diff-card" id="d-medium" onclick="setDiff('medium')">
+          <div class="diff-icon"><svg width="28" height="28"><use href="#ic-compass"/></svg></div>
+          <div class="diff-label">Explorer</div><div class="diff-desc">Some depth required</div>
+        </div>
+        <div class="diff-card" id="d-hard" onclick="setDiff('hard')">
+          <div class="diff-icon"><svg width="28" height="28"><use href="#ic-castle"/></svg></div>
+          <div class="diff-label">Scholar</div><div class="diff-desc">Deep cultural knowledge</div>
+        </div>
       </div>
-      <button class="btn btn-ink" style="width:100%;font-size:18px;padding:20px;border-radius:var(--r-lg)" onclick="startQuiz()">Begin Quiz →</button>
+      <button class="btn btn-ink" style="width:100%;font-size:18px;padding:20px;border-radius:var(--r-lg)" onclick="startQuiz()">
+        Begin Quiz
+        <svg width="18" height="18"><use href="#ic-arrow-right"/></svg>
+      </button>
       <p style="margin-top:16px;font-size:13px;color:var(--text3)" id="quiz-login-note">
-        <span id="qln-inner"><button onclick="goto('login')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Sign in</button> to save your score & earn badges</span>
+        <span id="qln-inner">
+          <button onclick="goto('login')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Sign in</button>
+          to save your score &amp; earn badges
+        </span>
       </p>
     </div>
   </div>
-  <!-- Question screen -->
   <div id="quiz-question" class="quiz-wrap" style="display:none">
     <div class="quiz-inner">
       <div class="q-meta">
         <span id="q-counter">Question 1 of 10</span>
-        <span id="q-xp" style="color:var(--jade);font-weight:700">⚡ 0 XP</span>
+        <span class="q-meta-xp" id="q-xp">
+          <svg><use href="#ic-zap"/></svg>
+          0 XP
+        </span>
       </div>
       <div class="progress" style="margin-bottom:28px"><div class="progress-bar" id="q-progress" style="width:0%;background:var(--cobalt)"></div></div>
       <div class="q-card">
@@ -557,7 +748,6 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
       <div id="q-feedback" style="display:none"></div>
     </div>
   </div>
-  <!-- Result screen -->
   <div id="quiz-result" class="quiz-wrap" style="display:none">
     <div class="quiz-inner" style="text-align:center">
       <div class="result-circle" id="result-circle">
@@ -570,25 +760,42 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
       <div id="result-badges" style="margin-bottom:28px"></div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <button class="btn btn-ink btn-lg" onclick="restartQuiz()">Try Again</button>
-        <button class="btn btn-outline btn-lg" id="result-explore-btn">Explore →</button>
+        <button class="btn btn-outline btn-lg" id="result-explore-btn">
+          Explore
+          <svg width="14" height="14"><use href="#ic-arrow-right"/></svg>
+        </button>
       </div>
     </div>
   </div>
-</div><!-- /page-quiz -->
+</div>
 
-<!-- ═══════ DASHBOARD ═══════ -->
+<!-- DASHBOARD -->
 <div id="page-dashboard" class="page">
   <div class="dash-hero">
     <div class="container" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div class="dash-avatar" id="dash-avatar">🌍</div>
+      <div class="dash-avatar" id="dash-avatar">
+        <svg><use href="#ic-user"/></svg>
+      </div>
       <div>
         <h1 id="dash-username" style="font-family:'Fraunces',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:#fff;margin:0 0 6px">Explorer</h1>
         <p id="dash-email" style="color:rgba(255,255,255,.72);font-size:15px"></p>
       </div>
       <div style="margin-left:auto;display:flex;gap:24px;flex-wrap:wrap">
-        <div style="text-align:center"><div class="dash-stat-val" id="dash-streak" style="color:var(--saffron)">0</div><div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px">Day streak</div></div>
-        <div style="text-align:center"><div class="dash-stat-val" id="dash-xp"     style="color:var(--jade)">0</div><div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px">Total XP</div></div>
-        <div style="text-align:center"><div class="dash-stat-val" id="dash-badges-count" style="color:var(--rose)">0</div><div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px">Badges</div></div>
+        <div style="text-align:center">
+          <div class="dash-stat-icon"><svg style="color:var(--saffron)"><use href="#ic-fire"/></svg></div>
+          <div class="dash-stat-val" id="dash-streak" style="color:var(--saffron)">0</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px">Day streak</div>
+        </div>
+        <div style="text-align:center">
+          <div class="dash-stat-icon"><svg style="color:var(--jade)"><use href="#ic-zap"/></svg></div>
+          <div class="dash-stat-val" id="dash-xp" style="color:var(--jade)">0</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px">Total XP</div>
+        </div>
+        <div style="text-align:center">
+          <div class="dash-stat-icon"><svg style="color:var(--rose)"><use href="#ic-medal"/></svg></div>
+          <div class="dash-stat-val" id="dash-badges-count" style="color:var(--rose)">0</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:3px">Badges</div>
+        </div>
       </div>
     </div>
   </div>
@@ -596,29 +803,45 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start">
       <div style="display:flex;flex-direction:column;gap:28px">
         <div class="panel">
-          <h3>📊 My Culture Progress</h3>
-          <div id="dash-progress-list"><p style="color:var(--text2);text-align:center;padding:40px 0">No cultures started yet. <button onclick="goto('explore')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Start exploring →</button></p></div>
+          <div class="panel-title"><svg><use href="#ic-chart"/></svg> My Culture Progress</div>
+          <div id="dash-progress-list">
+            <p style="color:var(--text2);text-align:center;padding:40px 0">No cultures started yet.
+              <button onclick="goto('explore')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Start exploring →</button>
+            </p>
+          </div>
         </div>
         <div class="panel">
-          <h3>📝 Recent Quiz Attempts</h3>
-          <div id="dash-attempts"><p style="color:var(--text2);text-align:center;padding:24px 0">No quizzes yet. <button onclick="goto('quiz')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Take your first quiz →</button></p></div>
+          <div class="panel-title"><svg><use href="#ic-feather"/></svg> Recent Quiz Attempts</div>
+          <div id="dash-attempts">
+            <p style="color:var(--text2);text-align:center;padding:24px 0">No quizzes yet.
+              <button onclick="goto('quiz')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Take your first quiz →</button>
+            </p>
+          </div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px">
         <div class="panel">
-          <h3>🏅 Badges</h3>
-          <div id="dash-badges"><p style="font-size:13px;color:var(--text2);text-align:center;padding:16px 0">Complete quizzes to earn badges!</p></div>
+          <div class="panel-title"><svg><use href="#ic-medal"/></svg> Badges</div>
+          <div id="dash-badges">
+            <p style="font-size:13px;color:var(--text2);text-align:center;padding:16px 0">Complete quizzes to earn badges!</p>
+          </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <button class="btn btn-ink" style="width:100%" onclick="goto('explore')">🌍 Explore Cultures</button>
-          <button class="btn btn-saffron" style="width:100%" onclick="goto('quiz')">🧠 Take a Quiz</button>
+          <button class="btn btn-ink" style="width:100%" onclick="goto('explore')">
+            <svg width="16" height="16"><use href="#ic-globe"/></svg>
+            Explore Cultures
+          </button>
+          <button class="btn btn-saffron" style="width:100%" onclick="goto('quiz')">
+            <svg width="16" height="16"><use href="#ic-quiz"/></svg>
+            Take a Quiz
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div><!-- /page-dashboard -->
+</div>
 
-<!-- ═══════ LOGIN ═══════ -->
+<!-- LOGIN -->
 <div id="page-login" class="page">
   <div class="auth-wrap">
     <div class="auth-box">
@@ -628,15 +851,20 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
       <div class="form-group">
         <input class="input" type="email"    id="login-email"    placeholder="Email address"/>
         <input class="input" type="password" id="login-password" placeholder="Password"/>
-        <button class="btn btn-ink" style="width:100%;font-size:16px;padding:16px;border-radius:var(--r-lg)" onclick="doLogin()">Sign In →</button>
+        <button class="btn btn-ink" style="width:100%;font-size:16px;padding:16px;border-radius:var(--r-lg)" onclick="doLogin()">
+          Sign In
+          <svg width="16" height="16"><use href="#ic-arrow-right"/></svg>
+        </button>
       </div>
-      <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--text2)">No account? <button onclick="goto('register')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Create one free →</button></p>
+      <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--text2)">No account?
+        <button onclick="goto('register')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Create one free →</button>
+      </p>
       <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text3)">Demo: use any email + password to try the app</p>
     </div>
   </div>
-</div><!-- /page-login -->
+</div>
 
-<!-- ═══════ REGISTER ═══════ -->
+<!-- REGISTER -->
 <div id="page-register" class="page">
   <div class="auth-wrap">
     <div class="auth-box">
@@ -647,557 +875,490 @@ button{font-family:'Outfit',sans-serif;cursor:pointer}
         <input class="input" type="text"     id="reg-username" placeholder="Username (e.g. amara_k)"/>
         <input class="input" type="email"    id="reg-email"    placeholder="Email address"/>
         <input class="input" type="password" id="reg-password" placeholder="Password (6+ characters)"/>
-        <button class="btn btn-saffron" style="width:100%;font-size:16px;padding:16px;border-radius:var(--r-lg)" onclick="doRegister()">Get Started →</button>
+        <button class="btn btn-saffron" style="width:100%;font-size:16px;padding:16px;border-radius:var(--r-lg)" onclick="doRegister()">
+          Get Started
+          <svg width="16" height="16"><use href="#ic-arrow-right"/></svg>
+        </button>
       </div>
-      <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--text2)">Already have an account? <button onclick="goto('login')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Sign in →</button></p>
+      <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--text2)">Already have an account?
+        <button onclick="goto('login')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Sign in →</button>
+      </p>
     </div>
   </div>
-</div><!-- /page-register -->
+</div>
 
-<!-- ═══════ FOOTER ═══════ -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <div class="footer-logo">CultureQuest</div>
+      <div class="footer-logo">
+        <svg><use href="#ic-aperture"/></svg>
+        Mila
+      </div>
       <p>Bringing the world's living cultures<br/>to curious minds everywhere.</p>
     </div>
     <div class="footer-col">
       <h5>Explore</h5>
-      <a onclick="goto('explore')">All Cultures</a>
-      <a onclick="goto('quiz')">Daily Quiz</a>
+      <a onclick="goto('explore')"><svg><use href="#ic-globe"/></svg>All Cultures</a>
+      <a onclick="goto('quiz')"><svg><use href="#ic-quiz"/></svg>Daily Quiz</a>
     </div>
     <div class="footer-col">
       <h5>Account</h5>
-      <a onclick="goto('dashboard')">My Progress</a>
-      <a onclick="goto('login')">Sign In</a>
-      <a onclick="goto('register')">Register</a>
+      <a onclick="goto('dashboard')"><svg><use href="#ic-chart"/></svg>My Progress</a>
+      <a onclick="goto('login')"><svg><use href="#ic-signin"/></svg>Sign In</a>
+      <a onclick="goto('register')"><svg><use href="#ic-user"/></svg>Register</a>
     </div>
     <div class="footer-col">
       <h5>About</h5>
-      <a>Our Mission</a><a>Blog</a><a>Contact</a>
+      <a><svg><use href="#ic-info"/></svg>Our Mission</a>
+      <a><svg><use href="#ic-feather"/></svg>Blog</a>
+      <a><svg><use href="#ic-mail"/></svg>Contact</a>
     </div>
   </div>
   <div class="footer-bottom container">
-    <p>© 2025 CultureQuest · Built with curiosity 🌍</p>
+    <div class="footer-bottom-icon">
+      <svg><use href="#ic-aperture"/></svg>
+      <p>© 2025 Mila · Built with curiosity</p>
+    </div>
     <p>Privacy · Terms</p>
   </div>
 </footer>
 
 <script>
-/* ════════════════════════════════════════════
-   DATA
-═══════════════════════════════════════════ */
 const COUNTRIES = [
-  {slug:"japan",   name:"Japan",       flag:"🇯🇵",region:"asia",     desc:"Ancient samurai, cherry blossoms, tea ceremony & anime.",        grad:"linear-gradient(145deg,#f7c35f,#e84c2b)", tags:["History","Arts"],          topics:6, questions:24},
-  {slug:"india",   name:"India",       flag:"🇮🇳",region:"asia",     desc:"Yoga, Diwali, Taj Mahal & ancient civilisation.",                grad:"linear-gradient(145deg,#f5a623,#6b3fa0)", tags:["Spirituality","Festivals"],topics:8, questions:30},
-  {slug:"morocco", name:"Morocco",     flag:"🇲🇦",region:"africa",   desc:"Medinas, souks, and Berber heritage at the crossroads of worlds.",grad:"linear-gradient(145deg,#1a7a5a,#f5a623)", tags:["Architecture","Cuisine"],  topics:5, questions:18},
-  {slug:"brazil",  name:"Brazil",      flag:"🇧🇷",region:"americas", desc:"Carnival, samba, Amazonian heritage & football culture.",         grad:"linear-gradient(145deg,#1b4fa8,#1a7a5a)", tags:["Music","Nature"],          topics:5, questions:20},
-  {slug:"france",  name:"France",      flag:"🇫🇷",region:"europe",   desc:"Revolution, haute cuisine, art & the joie de vivre.",             grad:"linear-gradient(145deg,#1b4fa8,#e84c2b)", tags:["Fashion","Cuisine"],       topics:6, questions:22},
-  {slug:"kenya",   name:"Kenya",       flag:"🇰🇪",region:"africa",   desc:"Maasai warriors, safari culture & coastal Swahili heritage.",     grad:"linear-gradient(145deg,#1a7a5a,#e84c2b)", tags:["Nature","Heritage"],       topics:5, questions:18},
-  {slug:"china",   name:"China",       flag:"🇨🇳",region:"asia",     desc:"Dynasties, silk road, calligraphy & lunar new year.",             grad:"linear-gradient(145deg,#e84c2b,#f5a623)", tags:["History","Ancient"],       topics:7, questions:28},
-  {slug:"greece",  name:"Greece",      flag:"🇬🇷",region:"europe",   desc:"Gods, democracy, philosophy & the Olympic Games.",                grad:"linear-gradient(145deg,#1b4fa8,#f5f5dc)", tags:["Mythology","History"],     topics:6, questions:24},
-  {slug:"mexico",  name:"Mexico",      flag:"🇲🇽",region:"americas", desc:"Aztec legacy, Día de los Muertos & vibrant street cuisine.",       grad:"linear-gradient(145deg,#1a7a5a,#e84c2b)", tags:["Ancient","Festivals"],     topics:6, questions:22},
-  {slug:"italy",   name:"Italy",       flag:"🇮🇹",region:"europe",   desc:"Renaissance art, pasta, opera & ancient Roman legacy.",           grad:"linear-gradient(145deg,#1a7a5a,#e84c2b)", tags:["Renaissance","Cuisine"],   topics:7, questions:26},
-  {slug:"egypt",   name:"Egypt",       flag:"🇪🇬",region:"africa",   desc:"Pharaohs, pyramids, hieroglyphs & the Nile.",                     grad:"linear-gradient(145deg,#f5a623,#1a1208)", tags:["Ancient","History"],       topics:6, questions:22},
-  {slug:"turkey",  name:"Turkey",      flag:"🇹🇷",region:"mideast",  desc:"Ottoman legacy, bazaars, whirling dervishes & baklava.",          grad:"linear-gradient(145deg,#e84c2b,#1b4fa8)", tags:["Ottoman","Cuisine"],       topics:5, questions:18},
+  {slug:"japan",   name:"Japan",   region:"asia",     desc:"Ancient samurai, cherry blossoms, tea ceremony & anime.",        grad:"linear-gradient(145deg,#f7c35f,#e84c2b)", tags:["History","Arts"],          topics:6, questions:24, icon:"ic-history"},
+  {slug:"india",   name:"India",   region:"asia",     desc:"Yoga, Diwali, Taj Mahal & ancient civilisation.",                grad:"linear-gradient(145deg,#f5a623,#6b3fa0)", tags:["Spirituality","Festivals"],topics:8, questions:30, icon:"ic-festival"},
+  {slug:"morocco", name:"Morocco", region:"africa",   desc:"Medinas, souks, and Berber heritage at the crossroads of worlds.",grad:"linear-gradient(145deg,#1a7a5a,#f5a623)", tags:["Architecture","Cuisine"],  topics:5, questions:18, icon:"ic-building"},
+  {slug:"brazil",  name:"Brazil",  region:"americas", desc:"Carnival, samba, Amazonian heritage & football culture.",         grad:"linear-gradient(145deg,#1b4fa8,#1a7a5a)", tags:["Music","Nature"],          topics:5, questions:20, icon:"ic-globe"},
+  {slug:"france",  name:"France",  region:"europe",   desc:"Revolution, haute cuisine, art & the joie de vivre.",             grad:"linear-gradient(145deg,#1b4fa8,#e84c2b)", tags:["Fashion","Cuisine"],       topics:6, questions:22, icon:"ic-art"},
+  {slug:"kenya",   name:"Kenya",   region:"africa",   desc:"Maasai warriors, safari culture & coastal Swahili heritage.",     grad:"linear-gradient(145deg,#1a7a5a,#e84c2b)", tags:["Nature","Heritage"],       topics:5, questions:18, icon:"ic-map"},
+  {slug:"china",   name:"China",   region:"asia",     desc:"Dynasties, silk road, calligraphy & lunar new year.",             grad:"linear-gradient(145deg,#e84c2b,#f5a623)", tags:["History","Ancient"],       topics:7, questions:28, icon:"ic-history"},
+  {slug:"greece",  name:"Greece",  region:"europe",   desc:"Gods, democracy, philosophy & the Olympic Games.",                grad:"linear-gradient(145deg,#1b4fa8,#f5f5dc)", tags:["Mythology","History"],     topics:6, questions:24, icon:"ic-star"},
+  {slug:"mexico",  name:"Mexico",  region:"americas", desc:"Aztec legacy, Día de los Muertos & vibrant street cuisine.",       grad:"linear-gradient(145deg,#1a7a5a,#e84c2b)", tags:["Ancient","Festivals"],     topics:6, questions:22, icon:"ic-festival"},
+  {slug:"italy",   name:"Italy",   region:"europe",   desc:"Renaissance art, pasta, opera & ancient Roman legacy.",           grad:"linear-gradient(145deg,#1a7a5a,#e84c2b)", tags:["Renaissance","Cuisine"],   topics:7, questions:26, icon:"ic-art"},
+  {slug:"egypt",   name:"Egypt",   region:"africa",   desc:"Pharaohs, pyramids, hieroglyphs & the Nile.",                     grad:"linear-gradient(145deg,#f5a623,#1a1208)", tags:["Ancient","History"],       topics:6, questions:22, icon:"ic-history"},
+  {slug:"turkey",  name:"Turkey",  region:"mideast",  desc:"Ottoman legacy, bazaars, whirling dervishes & baklava.",          grad:"linear-gradient(145deg,#e84c2b,#1b4fa8)", tags:["Ottoman","Cuisine"],       topics:5, questions:18, icon:"ic-building"},
 ];
 
 const JAPAN_TOPICS = [
-  {slug:"history", emoji:"⚔️",title:"History & Traditions",color:"var(--coral-l)",
+  {slug:"history",  icon:"ic-sword",   title:"History & Traditions", color:"var(--coral-l)",
    desc:"Japan's feudal period shaped a culture of discipline and aesthetic refinement that persists today.",
    content:"The samurai warrior class developed <strong>Bushido</strong> — the way of the warrior — a code of loyalty, honour, and martial skill. Japan's feudal era (1185–1868) gave rise to iconic castles like Himeji and Matsumoto, still standing today as UNESCO World Heritage Sites.<br><br>The <strong>Meiji Restoration</strong> (1868) rapidly modernised Japan while deliberately preserving cultural traditions. Ancient Shinto shrines stand steps away from bullet-train stations — a uniquely Japanese synthesis of ancient and modern."},
-  {slug:"arts",    emoji:"🎨",title:"Arts & Daily Life",    color:"var(--cobalt-l)",
+  {slug:"arts",     icon:"ic-art",     title:"Arts & Daily Life",    color:"var(--cobalt-l)",
    desc:"Japanese aesthetics are guided by wabi-sabi, ma, and iki — philosophy embedded in everyday objects.",
-   content:"<strong>Wabi-sabi</strong> finds beauty in imperfection and transience. A cracked tea bowl repaired with gold lacquer (kintsugi) is considered more beautiful for its history. <strong>Ma</strong> is the art of negative space — the pause in music, the empty room in a garden.<br><br><strong>Kabuki</strong> theatre, <strong>Noh</strong> drama, <strong>Ikebana</strong> flower arranging, and <strong>Shodo</strong> calligraphy are all UNESCO-recognised art forms. Manga and anime are Japan's modern contribution to global visual culture."},
-  {slug:"food",    emoji:"🍜",title:"Food & Cuisine",       color:"var(--jade-l)",
+   content:"<strong>Wabi-sabi</strong> finds beauty in imperfection and transience. A cracked tea bowl repaired with gold lacquer (kintsugi) is considered more beautiful for its history. <strong>Ma</strong> is the art of negative space — the pause in music, the empty room in a garden.<br><br><strong>Kabuki</strong> theatre, <strong>Noh</strong> drama, <strong>Ikebana</strong> flower arranging, and <strong>Shodo</strong> calligraphy are all UNESCO-recognised art forms."},
+  {slug:"food",     icon:"ic-food",    title:"Food & Cuisine",       color:"var(--jade-l)",
    desc:"Washoku is a UNESCO Intangible Cultural Heritage — built on seasonality, freshness, and umami.",
-   content:"<strong>Umami</strong> — the fifth taste — was identified by Japanese chemist Kikunae Ikeda in 1908 from kombu seaweed. It defines the depth in miso, soy, dashi, and aged cheeses worldwide.<br><br>Japan has more Michelin-starred restaurants than any other country. <strong>Sushi</strong> originally was street food. <strong>Ramen</strong> has four major regional styles — tonkotsu, shoyu, miso, shio. The <strong>tea ceremony</strong> (Chado) is a meditative ritual with strict choreography developed over 500 years."},
-  {slug:"stories", emoji:"📖",title:"Folklore & Stories",   color:"var(--violet-l)",
+   content:"<strong>Umami</strong> — the fifth taste — was identified by Japanese chemist Kikunae Ikeda in 1908 from kombu seaweed. It defines the depth in miso, soy, dashi, and aged cheeses worldwide.<br><br>Japan has more Michelin-starred restaurants than any other country. <strong>Sushi</strong> originally was street food. <strong>Ramen</strong> has four major regional styles — tonkotsu, shoyu, miso, shio."},
+  {slug:"stories",  icon:"ic-story",   title:"Folklore & Stories",   color:"var(--violet-l)",
    desc:"Kitsune spirits, moon princesses, and ancient myths woven into modern culture.",
-   content:"<strong>Momotaro</strong> (The Peach Boy) is Japan's most beloved folktale — a boy born from a giant peach who befriends animals to defeat demons, a story of courage and cooperation taught to every Japanese child.<br><br><strong>Kaguya-hime</strong> (The Moon Princess), written in the 10th century, is Japan's oldest prose narrative. <strong>Tanabata</strong> — the star festival — celebrates the annual meeting of two celestial lovers separated by the Milky Way, still celebrated on July 7th with bamboo wish trees."},
-  {slug:"language",emoji:"💬",title:"Language",              color:"var(--saffron-l)",
+   content:"<strong>Momotaro</strong> (The Peach Boy) is Japan's most beloved folktale — a boy born from a giant peach who befriends animals to defeat demons.<br><br><strong>Kaguya-hime</strong> (The Moon Princess), written in the 10th century, is Japan's oldest prose narrative. <strong>Tanabata</strong> celebrates the annual meeting of two celestial lovers separated by the Milky Way, on July 7th with bamboo wish trees."},
+  {slug:"language", icon:"ic-language",title:"Language",             color:"var(--saffron-l)",
    desc:"Three writing systems, 2,000+ kanji, and politeness levels that reshape every sentence.",
-   content:"Japanese uses three scripts simultaneously: <strong>Hiragana</strong> (phonetic, 46 characters), <strong>Katakana</strong> (for foreign words), and <strong>Kanji</strong> (over 2,000 Chinese-derived characters). A typical newspaper uses all three in the same sentence.<br><br>Japanese has distinct <strong>politeness levels</strong> (keigo) that change verb forms, nouns, and sentence structure entirely. The same idea is expressed with completely different words depending on whether you speak to a friend, a boss, or the Emperor."},
+   content:"Japanese uses three scripts simultaneously: <strong>Hiragana</strong> (46 phonetic characters), <strong>Katakana</strong> (for foreign words), and <strong>Kanji</strong> (over 2,000 Chinese-derived characters). A typical newspaper uses all three in the same sentence.<br><br>Japanese has distinct <strong>politeness levels</strong> (keigo) that change verb forms, nouns, and sentence structure entirely."},
 ];
 
 const QUIZ_QUESTIONS = [
-  {q:"What is the traditional Japanese tea ceremony called?",            opts:["Chado","Ikebana","Kabuki","Shodo"],              ans:0, cat:"Culture",    xp:10, exp:"Chado (the Way of Tea) is a ceremonial practice rooted in Zen Buddhism."},
-  {q:"Which mountain is Japan's tallest peak?",                          opts:["Mount Aso","Mount Koya","Mount Fuji","Mount Kita"],ans:2, cat:"Geography",  xp:10, exp:"Mount Fuji stands at 3,776m — an active stratovolcano and UNESCO World Heritage Site."},
+  {q:"What is the traditional Japanese tea ceremony called?",             opts:["Chado","Ikebana","Kabuki","Shodo"],               ans:0,cat:"Culture",    xp:10,exp:"Chado (the Way of Tea) is a ceremonial practice rooted in Zen Buddhism."},
+  {q:"Which mountain is Japan's tallest peak?",                          opts:["Mount Aso","Mount Koya","Mount Fuji","Mount Kita"],ans:2,cat:"Geography",  xp:10,exp:"Mount Fuji stands at 3,776m — an active stratovolcano and UNESCO World Heritage Site."},
   {q:"What does 'Hanami' mean?",                                         opts:["Moon viewing","Cherry blossom viewing","Mountain climbing","Sea fishing"],ans:1,cat:"Traditions",xp:10,exp:"Hanami means 'flower viewing'. The tradition dates back over 1,000 years."},
-  {q:"What are Japanese comic books called?",                            opts:["Anime","Haiku","Manga","Origami"],               ans:2, cat:"Arts",       xp:10, exp:"Manga combines 'man' (whimsical) and 'ga' (pictures), coined by artist Hokusai."},
-  {q:"Which city was Japan's imperial capital for over 1,000 years?",   opts:["Tokyo","Osaka","Kyoto","Nara"],                  ans:2, cat:"History",    xp:10, exp:"Kyoto was capital from 794 until 1869, when Emperor Meiji moved to Tokyo."},
-  {q:"What is sushi rice seasoned with?",                                opts:["Soy sauce","Vinegar, sugar & salt","Miso","Sesame oil"],ans:1,cat:"Food",  xp:10, exp:"Sushi rice (shari) uses rice vinegar, sugar, and salt for its distinctive flavour."},
-  {q:"What warrior class dominated feudal Japan?",                       opts:["Ninjas","Ronin","Samurai","Shogun"],             ans:2, cat:"History",    xp:10, exp:"Samurai followed Bushido — the way of the warrior — emphasising honour and loyalty."},
-  {q:"What is Japan's indigenous religion?",                             opts:["Buddhism","Shinto","Taoism","Zen"],              ans:1, cat:"Spirituality",xp:10, exp:"Shinto centres on kami (spirits) inhabiting natural objects. Over 80,000 shrines exist."},
+  {q:"What are Japanese comic books called?",                            opts:["Anime","Haiku","Manga","Origami"],                ans:2,cat:"Arts",       xp:10,exp:"Manga combines 'man' (whimsical) and 'ga' (pictures), coined by artist Hokusai."},
+  {q:"Which city was Japan's imperial capital for over 1,000 years?",   opts:["Tokyo","Osaka","Kyoto","Nara"],                   ans:2,cat:"History",    xp:10,exp:"Kyoto was capital from 794 until 1869, when Emperor Meiji moved to Tokyo."},
+  {q:"What is sushi rice seasoned with?",                                opts:["Soy sauce","Vinegar, sugar & salt","Miso","Sesame oil"],ans:1,cat:"Food", xp:10,exp:"Sushi rice (shari) uses rice vinegar, sugar, and salt for its distinctive flavour."},
+  {q:"What warrior class dominated feudal Japan?",                       opts:["Ninjas","Ronin","Samurai","Shogun"],              ans:2,cat:"History",    xp:10,exp:"Samurai followed Bushido — the way of the warrior — emphasising honour and loyalty."},
+  {q:"What is Japan's indigenous religion?",                             opts:["Buddhism","Shinto","Taoism","Zen"],               ans:1,cat:"Spirituality",xp:10,exp:"Shinto centres on kami (spirits) inhabiting natural objects. Over 80,000 shrines exist."},
   {q:"What does 'origami' literally mean?",                              opts:["Paper cutting","Paper folding","Paper painting","Paper weaving"],ans:1,cat:"Arts",xp:10,exp:"Origami combines 'oru' (to fold) and 'kami' (paper), dating to the 6th century."},
-  {q:"In the Tanabata legend, what separates the two star-crossed lovers?",opts:["A mountain","The ocean","The Milky Way","A great wall"],ans:2,cat:"Folklore",xp:10,exp:"Orihime and Hikoboshi are separated by the Amanogawa (Milky Way) and reunite yearly on July 7th."},
+  {q:"In the Tanabata legend, what separates the two lovers?",           opts:["A mountain","The ocean","The Milky Way","A great wall"],ans:2,cat:"Folklore",xp:10,exp:"Orihime and Hikoboshi are separated by the Amanogawa (Milky Way) and reunite on July 7th."},
 ];
 
 const TAG_COLOR = {History:"badge-cobalt",Arts:"badge-violet",Food:"badge-coral",Cuisine:"badge-coral",Spirituality:"badge-violet",Festivals:"badge-saffron",Nature:"badge-jade",Heritage:"badge-jade",Music:"badge-rose",Fashion:"badge-rose",Architecture:"badge-jade",Ancient:"badge-saffron",Mythology:"badge-cobalt",Renaissance:"badge-coral",Ottoman:"badge-coral"};
 
-/* ════════════════════════════════════════════
-   APP STATE
-═══════════════════════════════════════════ */
 let state = {
-  user: JSON.parse(localStorage.getItem('cq_user')||'null'),
-  currentCountry: 'japan',
-  quiz: { difficulty:'easy', current:0, score:0, xp:0, answers:[], questions:[] },
-  progress: JSON.parse(localStorage.getItem('cq_progress')||'{}'),
-  attempts: JSON.parse(localStorage.getItem('cq_attempts')||'[]'),
+  user:JSON.parse(localStorage.getItem('cq_user')||'null'),
+  currentCountry:'japan',
+  quiz:{difficulty:'easy',current:0,score:0,xp:0,answers:[],questions:[]},
+  progress:JSON.parse(localStorage.getItem('cq_progress')||'{}'),
+  attempts:JSON.parse(localStorage.getItem('cq_attempts')||'[]'),
 };
 
-function save() {
-  localStorage.setItem('cq_progress', JSON.stringify(state.progress));
-  localStorage.setItem('cq_attempts', JSON.stringify(state.attempts));
-  if (state.user) localStorage.setItem('cq_user', JSON.stringify(state.user));
+function save(){
+  localStorage.setItem('cq_progress',JSON.stringify(state.progress));
+  localStorage.setItem('cq_attempts',JSON.stringify(state.attempts));
+  if(state.user) localStorage.setItem('cq_user',JSON.stringify(state.user));
 }
 
-/* ════════════════════════════════════════════
-   ROUTING
-═══════════════════════════════════════════ */
-function goto(page, slug) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nlink').forEach(l => l.classList.remove('active'));
+function icon(id,size=16){return `<svg width="${size}" height="${size}"><use href="#${id}"/></svg>`}
 
-  const el = document.getElementById('page-'+page);
-  if (el) el.classList.add('active');
-
-  const link = document.querySelector(`.nlink[onclick*="'${page}'"]`);
-  if (link) link.classList.add('active');
-
+function goto(page,slug){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nlink').forEach(l=>l.classList.remove('active'));
+  const el=document.getElementById('page-'+page);
+  if(el) el.classList.add('active');
+  const link=document.querySelector(`.nlink[onclick*="'${page}'"]`);
+  if(link) link.classList.add('active');
   window.scrollTo(0,0);
-
-  if (page==='home')      renderHomeCards();
-  if (page==='explore')   renderExplore();
-  if (page==='country')   renderCountry(slug||state.currentCountry);
-  if (page==='quiz')      initQuiz(slug||state.currentCountry);
-  if (page==='dashboard') renderDashboard();
+  if(page==='home')      renderHomeCards();
+  if(page==='explore')   renderExplore();
+  if(page==='country')   renderCountry(slug||state.currentCountry);
+  if(page==='quiz')      initQuiz(slug||state.currentCountry);
+  if(page==='dashboard') renderDashboard();
 }
 
-/* ════════════════════════════════════════════
-   AUTH UI
-═══════════════════════════════════════════ */
-function updateAuthUI() {
-  const u = state.user;
-  document.getElementById('nav-auth-out').style.display = u ? 'none' : 'flex';
-  document.getElementById('nav-auth-in').style.display  = u ? 'flex' : 'none';
-  document.getElementById('mob-auth-out').style.display = u ? 'none' : 'block';
-  document.getElementById('mob-auth-in').style.display  = u ? 'block' : 'none';
-  document.getElementById('nav-dashboard').style.display  = u ? 'inline-flex' : 'none';
-  document.getElementById('mob-dashboard').style.display  = u ? 'block' : 'none';
-  if (u) {
-    document.getElementById('nav-avatar').textContent = u.avatar || '🌍';
-    document.getElementById('qln-inner').textContent = 'Score & badges saved to your account!';
-  }
+function updateAuthUI(){
+  const u=state.user;
+  document.getElementById('nav-auth-out').style.display=u?'none':'flex';
+  document.getElementById('nav-auth-in').style.display=u?'flex':'none';
+  document.getElementById('mob-auth-out').style.display=u?'none':'block';
+  document.getElementById('mob-auth-in').style.display=u?'block':'none';
+  document.getElementById('nav-dashboard').style.display=u?'inline-flex':'none';
+  document.getElementById('mob-dashboard').style.display=u?'block':'none';
+  if(u) document.getElementById('qln-inner').textContent='Score & badges saved to your account!';
 }
 
-function doLogin() {
-  const email = document.getElementById('login-email').value.trim();
-  const pass  = document.getElementById('login-password').value;
-  const err   = document.getElementById('login-error');
-
-  if (!email || !pass) { showErr(err,'Please fill in all fields'); return; }
-  if (!email.includes('@')) { showErr(err,'Please enter a valid email'); return; }
-  if (pass.length < 3) { showErr(err,'Password too short'); return; }
-
+function doLogin(){
+  const email=document.getElementById('login-email').value.trim();
+  const pass=document.getElementById('login-password').value;
+  const err=document.getElementById('login-error');
+  if(!email||!pass){showErr(err,'Please fill in all fields');return;}
+  if(!email.includes('@')){showErr(err,'Please enter a valid email');return;}
+  if(pass.length<3){showErr(err,'Password too short');return;}
   err.style.display='none';
-  // Demo: create/find user locally
-  const existing = JSON.parse(localStorage.getItem('cq_users')||'[]');
-  let user = existing.find(u=>u.email===email);
-  if (!user) user = { email, username: email.split('@')[0], avatar:'🌍', streak:0, xp:0, badges:[] };
-  state.user = user;
-  save();
-  updateAuthUI();
-  goto('dashboard');
+  let user={email,username:email.split('@')[0],streak:0,xp:0,badges:[]};
+  state.user=user; save(); updateAuthUI(); goto('dashboard');
 }
 
-function doRegister() {
-  const u = document.getElementById('reg-username').value.trim();
-  const e = document.getElementById('reg-email').value.trim();
-  const p = document.getElementById('reg-password').value;
-  const err = document.getElementById('register-error');
-
-  if (!u||!e||!p) { showErr(err,'Please fill in all fields'); return; }
-  if (!e.includes('@')) { showErr(err,'Please enter a valid email'); return; }
-  if (p.length < 6) { showErr(err,'Password must be at least 6 characters'); return; }
-  if (u.length < 3) { showErr(err,'Username must be at least 3 characters'); return; }
-
+function doRegister(){
+  const u=document.getElementById('reg-username').value.trim();
+  const e=document.getElementById('reg-email').value.trim();
+  const p=document.getElementById('reg-password').value;
+  const err=document.getElementById('register-error');
+  if(!u||!e||!p){showErr(err,'Please fill in all fields');return;}
+  if(!e.includes('@')){showErr(err,'Please enter a valid email');return;}
+  if(p.length<6){showErr(err,'Password must be at least 6 characters');return;}
+  if(u.length<3){showErr(err,'Username must be at least 3 characters');return;}
   err.style.display='none';
-  const user = { email:e, username:u, avatar:'🌍', streak:0, xp:state.user?.xp||0, badges:[] };
-  state.user = user;
-  save();
-  updateAuthUI();
-  goto('dashboard');
+  state.user={email:e,username:u,streak:0,xp:state.user?.xp||0,badges:[]};
+  save(); updateAuthUI(); goto('dashboard');
 }
 
-function logout() {
-  state.user = null;
-  localStorage.removeItem('cq_user');
-  updateAuthUI();
-  goto('home');
-}
+function logout(){state.user=null;localStorage.removeItem('cq_user');updateAuthUI();goto('home');}
+function showErr(el,msg){el.textContent=msg;el.style.display='block';}
 
-function showErr(el, msg) { el.textContent=msg; el.style.display='block'; }
-
-/* ════════════════════════════════════════════
-   CARD RENDERER
-═══════════════════════════════════════════ */
-function makeCard(c) {
-  const pct = state.progress[c.slug]?.pct || 0;
-  const badge1 = c.tags[0] ? `<span class="badge ${TAG_COLOR[c.tags[0]]||'badge-cobalt'}">${c.tags[0]}</span>` : '';
-  const badge2 = c.tags[1] ? `<span class="badge ${TAG_COLOR[c.tags[1]]||'badge-violet'}">${c.tags[1]}</span>` : '';
-  return `
-    <div class="ccard" onclick="goto('country','${c.slug}')">
-      <div class="ccard-thumb" style="background:${c.grad}">
-        <span class="ccard-flag">${c.flag}</span>
-        ${pct>0 ? `<span class="ccard-pct">${pct}%</span>` : '<span class="ccard-new">Explore</span>'}
+function makeCard(c){
+  const pct=state.progress[c.slug]?.pct||0;
+  const b1=c.tags[0]?`<span class="badge ${TAG_COLOR[c.tags[0]]||'badge-cobalt'}">${c.tags[0]}</span>`:'';
+  const b2=c.tags[1]?`<span class="badge ${TAG_COLOR[c.tags[1]]||'badge-violet'}">${c.tags[1]}</span>`:'';
+  return `<div class="ccard" onclick="goto('country','${c.slug}')">
+    <div class="ccard-thumb" style="background:${c.grad}">
+      <div class="ccard-flag">
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"><use href="#${c.icon||'ic-globe'}"/></svg>
       </div>
-      <div class="ccard-body">
-        <div class="ccard-tags">${badge1}${badge2}</div>
-        <div class="ccard-title">${c.name}</div>
-        <div class="ccard-desc">${c.desc}</div>
-        <div class="ccard-foot">
-          <div class="ccard-stats"><span>📚 ${c.topics}</span><span>❓ ${c.questions} Q</span></div>
-          <span class="ccard-arrow">→</span>
+      ${pct>0?`<span class="ccard-pct">${pct}%</span>`:'<span class="ccard-new">Explore</span>'}
+    </div>
+    <div class="ccard-body">
+      <div class="ccard-tags">${b1}${b2}</div>
+      <div class="ccard-title">${c.name}</div>
+      <div class="ccard-desc">${c.desc}</div>
+      <div class="ccard-foot">
+        <div class="ccard-stats">
+          <span>${icon('ic-book',13)} ${c.topics}</span>
+          <span>${icon('ic-quiz',13)} ${c.questions} Q</span>
         </div>
-        <div class="progress" style="margin-top:10px">
-          <div class="progress-bar" style="width:${pct}%"></div>
-        </div>
+        <span class="ccard-arrow">${icon('ic-arrow-right',15)}</span>
       </div>
-    </div>`;
+      <div class="progress" style="margin-top:10px"><div class="progress-bar" style="width:${pct}%"></div></div>
+    </div>
+  </div>`;
 }
 
-/* ════════════════════════════════════════════
-   HOME
-═══════════════════════════════════════════ */
-function renderHomeCards() {
-  const grid = document.getElementById('home-cards-grid');
-  grid.innerHTML = COUNTRIES.slice(0,8).map(makeCard).join('');
+function renderHomeCards(){
+  document.getElementById('home-cards-grid').innerHTML=COUNTRIES.slice(0,8).map(makeCard).join('');
 }
 
-/* ════════════════════════════════════════════
-   EXPLORE
-═══════════════════════════════════════════ */
-let exploreRegion = 'all';
-
-function renderExplore() {
-  const q = (document.getElementById('explore-search')?.value||'').toLowerCase();
-  const filtered = COUNTRIES.filter(c=>{
-    const okR = exploreRegion==='all' || c.region===exploreRegion;
-    const okS = !q || c.name.toLowerCase().includes(q)
-      || c.desc.toLowerCase().includes(q)
-      || c.tags.some(t=>t.toLowerCase().includes(q));
-    return okR && okS;
+let exploreRegion='all';
+function renderExplore(){
+  const q=(document.getElementById('explore-search')?.value||'').toLowerCase();
+  const filtered=COUNTRIES.filter(c=>{
+    const okR=exploreRegion==='all'||c.region===exploreRegion;
+    const okS=!q||c.name.toLowerCase().includes(q)||c.desc.toLowerCase().includes(q)||c.tags.some(t=>t.toLowerCase().includes(q));
+    return okR&&okS;
   });
-  const grid  = document.getElementById('explore-grid');
-  const empty = document.getElementById('explore-empty');
-  const clear = document.getElementById('explore-clear');
-  if (clear) clear.style.display = q ? 'block':'none';
-  if (filtered.length===0) { grid.innerHTML=''; empty.style.display='block'; }
-  else { empty.style.display='none'; grid.innerHTML=filtered.map(makeCard).join(''); }
+  const grid=document.getElementById('explore-grid');
+  const empty=document.getElementById('explore-empty');
+  const clr=document.getElementById('explore-clear');
+  if(clr) clr.style.display=q?'block':'none';
+  if(filtered.length===0){grid.innerHTML='';empty.style.display='block';}
+  else{empty.style.display='none';grid.innerHTML=filtered.map(makeCard).join('');}
 }
-
-function filterExplore() { renderExplore(); }
-
-function setRegion(btn, region) {
-  exploreRegion = region;
+function filterExplore(){renderExplore();}
+function setRegion(btn,region){
+  exploreRegion=region;
   document.querySelectorAll('#explore-filters .fpill').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderExplore();
+  btn.classList.add('active'); renderExplore();
 }
-
-function setRegionAll() {
+function setRegionAll(){
   exploreRegion='all';
   document.querySelectorAll('#explore-filters .fpill').forEach((b,i)=>b.classList.toggle('active',i===0));
   renderExplore();
 }
 
-/* ════════════════════════════════════════════
-   COUNTRY DETAIL
-═══════════════════════════════════════════ */
-function renderCountry(slug) {
-  state.currentCountry = slug;
-  const c = COUNTRIES.find(x=>x.slug===slug) || COUNTRIES[0];
-  const prog = state.progress[slug] || {pct:0};
+function renderCountry(slug){
+  state.currentCountry=slug;
+  const c=COUNTRIES.find(x=>x.slug===slug)||COUNTRIES[0];
+  const prog=state.progress[slug]||{pct:0};
+  document.getElementById('country-hero').style.background=c.grad;
+  document.getElementById('country-flag').innerHTML=`<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"><use href="#${c.icon||'ic-flag'}"/></svg>`;
+  document.getElementById('country-name').textContent=c.name;
+  document.getElementById('country-region').textContent=c.region.charAt(0).toUpperCase()+c.region.slice(1).replace('-',' ');
+  document.getElementById('country-progress-bar').style.width=prog.pct+'%';
+  document.getElementById('country-pct').textContent=prog.pct+'%';
+  document.getElementById('country-quiz-btn').onclick=()=>goto('quiz',slug);
+  document.getElementById('country-meta').innerHTML=
+    [`${icon('ic-users',13)} ${c.name==='Japan'?'126M':'—'}`,`${icon('ic-book',13)} ${c.topics} topics`,`${icon('ic-quiz',13)} ${c.questions} Q`]
+    .map(s=>`<span class="meta-pill">${s}</span>`).join('');
 
-  document.getElementById('country-hero').style.background = c.grad;
-  document.getElementById('country-flag').textContent = c.flag;
-  document.getElementById('country-name').textContent = c.name;
-  document.getElementById('country-region').textContent = c.region.charAt(0).toUpperCase()+c.region.slice(1).replace('-',' ');
-  document.getElementById('country-progress-bar').style.width = prog.pct+'%';
-  document.getElementById('country-pct').textContent = prog.pct+'%';
-  document.getElementById('country-quiz-btn').onclick = ()=>goto('quiz',slug);
-  document.getElementById('country-meta').innerHTML =
-    [`👥 ${c.name==='Japan'?'126M':'—'}`,`📚 ${c.topics} topics`,`❓ ${c.questions} Q`]
-    .map(s=>`<span style="font-size:13px;color:rgba(255,255,255,.8);background:rgba(0,0,0,.25);padding:4px 12px;border-radius:999px">${s}</span>`)
-    .join('');
-
-  const topics = slug==='japan' ? JAPAN_TOPICS : [
-    {slug:"overview",emoji:"🌍",title:"Overview",color:"var(--cobalt-l)",desc:"Learn about this culture.",content:`<strong>${c.name}</strong> is a fascinating culture with rich traditions, history, and arts. Full content coming soon — take the quiz to test what you know!`},
+  const topics=slug==='japan'?JAPAN_TOPICS:[
+    {slug:"overview",icon:"ic-globe",title:"Overview",color:"var(--cobalt-l)",desc:"Learn about this culture.",
+     content:`<strong>${c.name}</strong> is a fascinating culture with rich traditions, history, and arts. Full content coming soon — take the quiz to test what you know!`},
   ];
 
-  // Render tabs
-  const tabsEl = document.getElementById('country-tabs');
-  tabsEl.innerHTML = topics.map((t,i)=>`
+  document.getElementById('country-tabs').innerHTML=topics.map((t,i)=>`
     <button class="ctab${i===0?' active':''}" id="ctab-${t.slug}" onclick="showTopic('${t.slug}')">
-      ${t.emoji} ${t.title}
-    </button>`).join('') +
-    `<button class="ctab" onclick="goto('quiz','${slug}')">🧠 Take Quiz</button>`;
+      ${icon(t.icon||'ic-book',15)} ${t.title}
+    </button>`).join('')+
+    `<button class="ctab" onclick="goto('quiz','${slug}')">${icon('ic-quiz',15)} Take Quiz</button>`;
 
-  // Render topic sections
-  const contentEl = document.getElementById('country-content');
-  contentEl.innerHTML = topics.map((t,i)=>`
+  document.getElementById('country-content').innerHTML=topics.map((t,i)=>`
     <div id="topic-${t.slug}" class="topic-section${i===0?' active':''}">
       <div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:32px;flex-wrap:wrap;padding-top:52px">
-        <div style="width:64px;height:64px;border-radius:var(--r-lg);background:${t.color};border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0">${t.emoji}</div>
+        <div class="topic-icon" style="background:${t.color}">
+          <svg><use href="#${t.icon||'ic-book'}"/></svg>
+        </div>
         <div>
           <h2 style="font-family:'Fraunces',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--text-h);margin-bottom:8px">${t.title}</h2>
           <p style="color:var(--text2);max-width:620px;line-height:1.7">${t.desc}</p>
         </div>
       </div>
       <div style="background:var(--cream2);border-radius:var(--r-xl);padding:36px;border-left:4px solid var(--cobalt);margin-bottom:36px;line-height:1.85;font-size:16px;color:var(--text)">${t.content}</div>
-      ${state.user?`<button class="btn btn-jade" onclick="markTopic('${slug}','${t.slug}')">✓ Mark as read (+5 XP)</button>`:'<button class="btn btn-ghost" onclick="goto(\'login\')">Sign in to track progress</button>'}
-    </div>
-  `).join('');
+      ${state.user
+        ?`<button class="btn btn-jade" onclick="markTopic('${slug}','${t.slug}')">${icon('ic-check',16)} Mark as read (+5 XP)</button>`
+        :`<button class="btn btn-ghost" onclick="goto('login')">${icon('ic-signin',16)} Sign in to track progress</button>`}
+    </div>`).join('');
 }
 
-function showTopic(slug) {
+function showTopic(slug){
   document.querySelectorAll('.topic-section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
-  const section = document.getElementById('topic-'+slug);
-  const tab = document.getElementById('ctab-'+slug);
-  if (section) section.classList.add('active');
-  if (tab) tab.classList.add('active');
+  const s=document.getElementById('topic-'+slug);
+  const t=document.getElementById('ctab-'+slug);
+  if(s) s.classList.add('active');
+  if(t) t.classList.add('active');
 }
 
-function markTopic(country, topic) {
-  if (!state.progress[country]) state.progress[country]={pct:0,done:[]};
-  const p = state.progress[country];
-  if (!p.done) p.done=[];
-  if (!p.done.includes(topic)) {
+function markTopic(country,topic){
+  if(!state.progress[country]) state.progress[country]={pct:0,done:[]};
+  const p=state.progress[country];
+  if(!p.done) p.done=[];
+  if(!p.done.includes(topic)){
     p.done.push(topic);
-    const c = COUNTRIES.find(x=>x.slug===country);
-    p.pct = Math.round((p.done.length / (c?.topics||5)) * 100);
-    if (state.user) { state.user.xp=(state.user.xp||0)+5; }
+    const c=COUNTRIES.find(x=>x.slug===country);
+    p.pct=Math.round((p.done.length/(c?.topics||5))*100);
+    if(state.user) state.user.xp=(state.user.xp||0)+5;
     save();
     document.getElementById('country-progress-bar').style.width=p.pct+'%';
     document.getElementById('country-pct').textContent=p.pct+'%';
-    const btn = document.querySelector(`button[onclick*="markTopic('${country}','${topic}')"]`);
-    if (btn) { btn.textContent='✓ Read!'; btn.classList.remove('btn-jade'); btn.classList.add('btn-outline'); btn.disabled=true; }
+    const btn=document.querySelector(`button[onclick*="markTopic('${country}','${topic}')"]`);
+    if(btn){btn.innerHTML=`${icon('ic-check',16)} Read!`;btn.classList.remove('btn-jade');btn.classList.add('btn-outline');btn.disabled=true;}
   }
 }
 
-/* ════════════════════════════════════════════
-   QUIZ ENGINE
-═══════════════════════════════════════════ */
-function initQuiz(slug) {
-  state.currentCountry = slug;
-  const c = COUNTRIES.find(x=>x.slug===slug)||COUNTRIES[0];
-  document.getElementById('quiz-edition-badge').textContent = `${c.flag} ${c.name} Edition`;
+function initQuiz(slug){
+  state.currentCountry=slug;
+  const c=COUNTRIES.find(x=>x.slug===slug)||COUNTRIES[0];
+  document.getElementById('quiz-edition-badge').innerHTML=`${icon('ic-flag',14)} ${c.name} Edition`;
   document.getElementById('quiz-start').style.display='flex';
   document.getElementById('quiz-question').style.display='none';
   document.getElementById('quiz-result').style.display='none';
   document.getElementById('result-explore-btn').onclick=()=>goto('country',slug);
-  state.quiz = {difficulty:'easy',current:0,score:0,xp:0,answers:[],questions:[]};
+  state.quiz={difficulty:'easy',current:0,score:0,xp:0,answers:[],questions:[]};
   setDiff('easy');
 }
 
-function setDiff(d) {
+function setDiff(d){
   state.quiz.difficulty=d;
-  ['easy','medium','hard'].forEach(x=>{
-    document.getElementById('d-'+x).classList.toggle('active',x===d);
-  });
+  ['easy','medium','hard'].forEach(x=>document.getElementById('d-'+x).classList.toggle('active',x===d));
 }
 
-function startQuiz() {
-  const qs = [...QUIZ_QUESTIONS].sort(()=>Math.random()-.5);
-  state.quiz.questions=qs;
-  state.quiz.current=0;
-  state.quiz.score=0;
-  state.quiz.xp=0;
-  state.quiz.answers=[];
+function startQuiz(){
+  const qs=[...QUIZ_QUESTIONS].sort(()=>Math.random()-.5);
+  state.quiz.questions=qs;state.quiz.current=0;state.quiz.score=0;state.quiz.xp=0;state.quiz.answers=[];
   document.getElementById('quiz-start').style.display='none';
   document.getElementById('quiz-question').style.display='flex';
   renderQuestion();
 }
 
-function renderQuestion() {
-  const {current,questions,xp} = state.quiz;
-  const q = questions[current];
-  const total = questions.length;
+function renderQuestion(){
+  const {current,questions,xp}=state.quiz;
+  const q=questions[current];
+  const total=questions.length;
   document.getElementById('q-counter').textContent=`Question ${current+1} of ${total}`;
-  document.getElementById('q-xp').textContent=`⚡ ${xp} XP`;
+  document.getElementById('q-xp').innerHTML=`${icon('ic-zap',14)} ${xp} XP`;
   document.getElementById('q-progress').style.width=`${(current/total)*100}%`;
   document.getElementById('q-cat').textContent=q.cat;
   document.getElementById('q-text').textContent=q.q;
   document.getElementById('q-feedback').style.display='none';
-  document.getElementById('q-answers').innerHTML = q.opts.map((opt,i)=>
+  document.getElementById('q-answers').innerHTML=q.opts.map((opt,i)=>
     `<button class="ans-btn" id="ans-${i}" onclick="selectAnswer(${i})">${opt}</button>`
   ).join('');
 }
 
-function selectAnswer(idx) {
-  const q = state.quiz.questions[state.quiz.current];
-  const correct = idx===q.ans;
+function selectAnswer(idx){
+  const q=state.quiz.questions[state.quiz.current];
+  const correct=idx===q.ans;
   document.querySelectorAll('.ans-btn').forEach(b=>b.disabled=true);
   document.getElementById('ans-'+q.ans).classList.add('correct');
-  if (!correct) document.getElementById('ans-'+idx).classList.add('wrong');
-  if (correct) { state.quiz.score++; state.quiz.xp+=q.xp; }
+  if(!correct) document.getElementById('ans-'+idx).classList.add('wrong');
+  if(correct){state.quiz.score++;state.quiz.xp+=q.xp;}
   state.quiz.answers.push({q:q.q,selected:idx,correct,explanation:q.exp});
-  const fb = document.getElementById('q-feedback');
+  const fb=document.getElementById('q-feedback');
   fb.innerHTML=`<div class="feedback-bar ${correct?'fb-correct':'fb-wrong'}">
-    <span style="font-size:14px;font-weight:600;flex:1">${correct?'✓ Correct!':'✗ Wrong'} — ${q.exp}</span>
+    <span style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;flex:1">
+      ${icon(correct?'ic-check':'ic-x',16)} ${correct?'Correct!':'Wrong'} — ${q.exp}
+    </span>
     <button class="btn btn-sm btn-outline" onclick="nextQuestion()" style="flex-shrink:0">
-      ${state.quiz.current+1<state.quiz.questions.length?'Next →':'Finish →'}
+      ${state.quiz.current+1<state.quiz.questions.length?'Next':'Finish'}
+      ${icon('ic-arrow-right',13)}
     </button>
   </div>`;
   fb.style.display='block';
 }
 
-function nextQuestion() {
+function nextQuestion(){
   state.quiz.current++;
-  if (state.quiz.current>=state.quiz.questions.length) finishQuiz();
+  if(state.quiz.current>=state.quiz.questions.length) finishQuiz();
   else renderQuestion();
 }
 
-function finishQuiz() {
-  const {score,xp,questions} = state.quiz;
-  const total = questions.length;
-  const pct = Math.round((score/total)*100);
-  const slug = state.currentCountry;
+function finishQuiz(){
+  const {score,xp,questions}=state.quiz;
+  const total=questions.length;
+  const pct=Math.round((score/total)*100);
+  const slug=state.currentCountry;
   document.getElementById('quiz-question').style.display='none';
   document.getElementById('quiz-result').style.display='flex';
   document.getElementById('result-score').textContent=score;
   document.getElementById('result-total').textContent='/'+total;
 
   let title,msg,color;
-  if(pct>=90){title='🏆 Master!';        msg='Extraordinary cultural knowledge.'; color='var(--saffron)'}
-  else if(pct>=70){title='⭐ Great Explorer!'; msg='Impressive result — keep going!'; color='var(--jade)'}
-  else if(pct>=50){title='🌸 Cultural Learner';msg='Good foundation — keep exploring!';color='var(--cobalt)'}
-  else            {title='🗺️ Just Starting';   msg='Japan has much more to share.';   color='var(--coral)'}
+  if(pct>=90){title='Master!';      msg='Extraordinary cultural knowledge.'; color='var(--saffron)';}
+  else if(pct>=70){title='Great Explorer!'; msg='Impressive result — keep going!'; color='var(--jade)';}
+  else if(pct>=50){title='Cultural Learner';msg='Good foundation — keep exploring!';color='var(--cobalt)';}
+  else{title='Just Starting';msg='There is much more to discover.';color='var(--coral)';}
 
-  document.getElementById('result-title').textContent=title;
+  document.getElementById('result-title').innerHTML=`${icon(pct>=90?'ic-trophy':pct>=70?'ic-star':pct>=50?'ic-compass':'ic-map',28)} ${title}`;
   document.getElementById('result-msg').textContent=msg;
   document.getElementById('result-circle').style.cssText=`width:140px;height:140px;border-radius:50%;background:rgba(0,0,0,0.06);border:3px solid ${color};display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 28px`;
   document.getElementById('result-score').style.color=color;
   document.getElementById('result-xp').innerHTML=`You earned <strong style="color:var(--jade)">${xp} XP</strong>`;
 
-  // Save attempt + progress
-  if (!state.progress[slug]) state.progress[slug]={pct:0};
-  const prev = state.progress[slug];
-  const newPct = Math.max(prev.pct||0, pct);
-  state.progress[slug].pct = newPct;
+  if(!state.progress[slug]) state.progress[slug]={pct:0};
+  state.progress[slug].pct=Math.max(state.progress[slug].pct||0,pct);
   state.attempts.push({slug,score,total,xp,pct,date:new Date().toISOString()});
-  if (state.user) state.user.xp=(state.user.xp||0)+xp;
+  if(state.user) state.user.xp=(state.user.xp||0)+xp;
   save();
 
-  // Badges
   const newBadges=[];
-  if(pct===100 && !(state.user?.badges||[]).find(b=>b.slug==='perfect')){
-    newBadges.push({slug:'perfect',emoji:'💯',name:'Perfect Score'});
-  }
-  if(state.attempts.length===1){newBadges.push({slug:'first',emoji:'🎯',name:'First Quiz'});}
-  if(state.user && newBadges.length){
-    state.user.badges=[...((state.user.badges||[])),...newBadges.filter(n=>!state.user.badges.find(b=>b.slug===n.slug))];
+  if(pct===100&&!(state.user?.badges||[]).find(b=>b.slug==='perfect')) newBadges.push({slug:'perfect',icon:'ic-target',name:'Perfect Score'});
+  if(state.attempts.length===1) newBadges.push({slug:'first',icon:'ic-zap',name:'First Quiz'});
+  if(state.user&&newBadges.length){
+    state.user.badges=[...(state.user.badges||[]),...newBadges.filter(n=>!state.user.badges.find(b=>b.slug===n.slug))];
     save();
   }
-
   const badgesEl=document.getElementById('result-badges');
   if(newBadges.length){
     badgesEl.innerHTML=`<div style="background:var(--saffron-l);border:1.5px solid var(--saffron);border-radius:var(--r-lg);padding:18px;margin-bottom:16px">
-      <p style="font-weight:700;margin-bottom:10px;color:var(--ink)">🎉 New badges earned!</p>
+      <p style="font-weight:700;margin-bottom:10px;color:var(--ink);display:flex;align-items:center;gap:7px">${icon('ic-sparkle',16)} New badges earned!</p>
       <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-        ${newBadges.map(b=>`<span style="background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600">${b.emoji} ${b.name}</span>`).join('')}
+        ${newBadges.map(b=>`<span style="background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px">${icon(b.icon,14)} ${b.name}</span>`).join('')}
       </div>
     </div>`;
   } else badgesEl.innerHTML='';
 }
 
-function restartQuiz() {
-  initQuiz(state.currentCountry);
-}
+function restartQuiz(){initQuiz(state.currentCountry);}
 
-/* ════════════════════════════════════════════
-   DASHBOARD
-═══════════════════════════════════════════ */
-function renderDashboard() {
-  if (!state.user) { goto('login'); return; }
-  const u = state.user;
-  document.getElementById('dash-avatar').textContent = u.avatar||'🌍';
-  document.getElementById('dash-username').textContent = u.username||'Explorer';
-  document.getElementById('dash-email').textContent = u.email||'';
-  document.getElementById('dash-streak').textContent = u.streak||0;
-  document.getElementById('dash-xp').textContent = u.xp||0;
-  document.getElementById('dash-badges-count').textContent = (u.badges||[]).length;
+function renderDashboard(){
+  if(!state.user){goto('login');return;}
+  const u=state.user;
+  document.getElementById('dash-username').textContent=u.username||'Explorer';
+  document.getElementById('dash-email').textContent=u.email||'';
+  document.getElementById('dash-streak').textContent=u.streak||0;
+  document.getElementById('dash-xp').textContent=u.xp||0;
+  document.getElementById('dash-badges-count').textContent=(u.badges||[]).length;
 
-  // Progress list
-  const progKeys = Object.keys(state.progress);
-  const progEl = document.getElementById('dash-progress-list');
-  if (progKeys.length===0) {
-    progEl.innerHTML='<p style="color:var(--text2);text-align:center;padding:40px 0">No cultures started yet. <button onclick="goto(\'explore\')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:\'Outfit\',sans-serif">Start exploring →</button></p>';
+  const progKeys=Object.keys(state.progress);
+  const progEl=document.getElementById('dash-progress-list');
+  if(progKeys.length===0){
+    progEl.innerHTML=`<p style="color:var(--text2);text-align:center;padding:40px 0">No cultures started yet. <button onclick="goto('explore')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Start exploring →</button></p>`;
   } else {
-    progEl.innerHTML = progKeys.map(slug=>{
-      const c = COUNTRIES.find(x=>x.slug===slug);
-      const pct = state.progress[slug]?.pct||0;
+    progEl.innerHTML=progKeys.map(slug=>{
+      const c=COUNTRIES.find(x=>x.slug===slug);
+      const pct=state.progress[slug]?.pct||0;
       return `<div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--border)">
-        <span style="font-size:22px">${c?.flag||'🌍'}</span>
+        <div style="width:32px;height:32px;background:var(--cream2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="16" height="16"><use href="#${c?.icon||'ic-globe'}"/></svg>
+        </div>
         <span style="font-family:'Fraunces',serif;font-size:15px;font-weight:600;flex:1;color:var(--text-h)">${c?.name||slug}</span>
         <div class="progress" style="flex:2"><div class="progress-bar" style="width:${pct}%"></div></div>
         <span style="font-size:13px;font-weight:600;color:var(--jade);min-width:36px">${pct}%</span>
-        <button class="btn btn-sm btn-cobalt" onclick="goto('quiz','${slug}')">Quiz</button>
+        <button class="btn btn-sm btn-cobalt" onclick="goto('quiz','${slug}')">${icon('ic-quiz',12)} Quiz</button>
       </div>`;
     }).join('');
   }
 
-  // Attempts
-  const attEl = document.getElementById('dash-attempts');
-  if (state.attempts.length===0) {
-    attEl.innerHTML='<p style="color:var(--text2);text-align:center;padding:24px 0">No quizzes yet. <button onclick="goto(\'quiz\')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:\'Outfit\',sans-serif">Take your first quiz →</button></p>';
+  const attEl=document.getElementById('dash-attempts');
+  if(state.attempts.length===0){
+    attEl.innerHTML=`<p style="color:var(--text2);text-align:center;padding:24px 0">No quizzes yet. <button onclick="goto('quiz')" style="color:#aa3bff;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif">Take your first quiz →</button></p>`;
   } else {
-    attEl.innerHTML = [...state.attempts].reverse().slice(0,6).map(a=>{
-      const c = COUNTRIES.find(x=>x.slug===a.slug);
-      const col = a.pct>=70?'var(--jade)':a.pct>=50?'var(--cobalt)':'var(--coral)';
+    attEl.innerHTML=[...state.attempts].reverse().slice(0,6).map(a=>{
+      const c=COUNTRIES.find(x=>x.slug===a.slug);
+      const col=a.pct>=70?'var(--jade)':a.pct>=50?'var(--cobalt)':'var(--coral)';
       return `<div style="display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--border)">
-        <span style="font-size:22px">${c?.flag||'🌍'}</span>
+        <div style="width:32px;height:32px;background:var(--cream2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="16" height="16"><use href="#${c?.icon||'ic-globe'}"/></svg>
+        </div>
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px;color:var(--text-h)">${c?.name||a.slug}</div>
           <div style="font-size:12px;color:var(--text3)">${new Date(a.date).toLocaleDateString()}</div>
         </div>
         <span style="font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:${col}">${a.score}/${a.total}</span>
-        <span style="font-size:12px;font-weight:600;color:var(--jade)">+${a.xp} XP</span>
+        <span style="font-size:12px;font-weight:600;color:var(--jade);display:flex;align-items:center;gap:3px">${icon('ic-zap',12)} ${a.xp} XP</span>
       </div>`;
     }).join('');
   }
 
-  // Badges
-  const badgeEl = document.getElementById('dash-badges');
-  const badges = u.badges||[];
-  if (badges.length===0) {
+  const badgeEl=document.getElementById('dash-badges');
+  const badges=u.badges||[];
+  if(badges.length===0){
     badgeEl.innerHTML='<p style="font-size:13px;color:var(--text2);text-align:center;padding:16px 0">Complete quizzes to earn badges!</p>';
   } else {
     badgeEl.innerHTML=`<div style="display:flex;flex-wrap:wrap;gap:8px">${badges.map(b=>`
-      <div style="background:var(--cream2);border:1.5px solid var(--border);border-radius:var(--r);padding:8px 12px;text-align:center">
-        <div style="font-size:22px">${b.emoji}</div>
-        <div style="font-size:11px;font-weight:600;margin-top:3px;color:var(--text-h)">${b.name}</div>
+      <div style="background:var(--cream2);border:1.5px solid var(--border);border-radius:var(--r);padding:10px 12px;text-align:center;min-width:60px">
+        <div style="display:flex;justify-content:center;margin-bottom:4px">${icon(b.icon||'ic-medal',22)}</div>
+        <div style="font-size:11px;font-weight:600;color:var(--text-h)">${b.name}</div>
       </div>`).join('')}</div>`;
   }
 }
 
-/* ════════════════════════════════════════════
-   MOBILE MENU
-═══════════════════════════════════════════ */
-function toggleMenu() {
-  const ham = document.getElementById('ham');
-  const drawer = document.getElementById('mobile-drawer');
-  ham.classList.toggle('open');
-  drawer.classList.toggle('open');
+function toggleMenu(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobile-drawer').classList.toggle('open');
 }
 
-/* ════════════════════════════════════════════
-   INIT
-═══════════════════════════════════════════ */
 updateAuthUI();
 renderHomeCards();
 </script>
 </body>
 </html>
+HTMLEOF
+echo "Done: $(wc -l < /mnt/user-data/outputs/index.html) lines"
