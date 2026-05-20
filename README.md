@@ -24,29 +24,20 @@ Create accounts and log in securely
 Mila is a complete multi-page web application with separate frontend and backend architecture.
 
 🧱 Project Structure
-mila/
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── assets/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── api.js
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/
-│   ├── app.py
-│   ├── models.py
-│   ├── routes/
-│   ├── seed.py
-│   ├── requirements.txt
-│   └── database.db
-│
-└── README.md
+Frontend
+Public assets
+React pages
+Components
+Styling and UI assets
+Application routing
+API integration
+Backend
+Flask server
+Database models
+API routes
+Seed data
+Authentication logic
+README documentation
 🚀 Features
 🌍 Cultural Exploration
 Explore cultures from 15+ countries
@@ -122,53 +113,6 @@ Topic lessons
 Cultural information
 20 quiz questions
 XP rewards
-⚙️ Installation
-1️⃣ Clone the Repository
-git clone https://github.com/wyllade/mila.git
-
-cd mila
-💻 Frontend Setup (React)
-cd frontend
-
-npm install
-
-npm run dev
-
-Frontend runs on:
-
-http://localhost:5173
-🐍 Backend Setup (Flask)
-cd backend
-
-pip install -r requirements.txt
-
-python seed.py
-
-python app.py
-
-Backend runs on:
-
-http://localhost:5000
-🔗 Connecting Frontend and Backend
-
-The React frontend communicates with Flask through REST APIs.
-
-Example API base URL:
-
-const API_BASE = "http://localhost:5000/api";
-
-Example fetch request:
-
-fetch(`${API_BASE}/countries`)
-📡 API Endpoints
-Method	Endpoint	Description
-GET	/api/countries	Get all countries
-GET	/api/countries/:slug	Get single country
-GET	/api/questions/:slug	Get quiz questions
-POST	/api/auth/register	Register account
-POST	/api/auth/login	Login user
-GET	/api/auth/me	Current user
-POST	/api/progress	Save quiz progress
 🎨 Design Style
 
 Mila uses:
