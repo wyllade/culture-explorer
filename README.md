@@ -124,7 +124,7 @@ Cultural information
 XP rewards
 ⚙️ Installation
 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/mila.git
+git clone https://github.com/wyllade/mila.git
 
 cd mila
 💻 Frontend Setup (React)
