@@ -7,8 +7,8 @@ A modern full-stack cultural learning platform where users explore traditions, f
 Mila is a full-stack cultural exploration website built with:
 
 React + Vite for the frontend
-Flask + Python for the backend API
-HTML5 + CSS3 for structure and styling
+Flask + Python for the backend
+HTML5 + CSS3 for styling and structure
 JavaScript (ES6+) for frontend logic
 SQLite / SQLAlchemy for data storage
 
@@ -21,12 +21,12 @@ Earn XP and badges
 Track learning progress
 Create accounts and log in securely
 
-Unlike a single-page HTML file, Mila is a complete multi-page web application with a separated frontend and backend architecture.
+Mila is a complete multi-page web application with separate frontend and backend architecture.
 
-🧱 Project Architecture
+🧱 Project Structure
 mila/
 │
-├── frontend/                 # React Frontend
+├── frontend/
 │   ├── public/
 │   ├── src/
 │   │   ├── pages/
@@ -38,7 +38,7 @@ mila/
 │   ├── package.json
 │   └── vite.config.js
 │
-├── backend/                  # Flask Backend
+├── backend/
 │   ├── app.py
 │   ├── models.py
 │   ├── routes/
@@ -122,3 +122,83 @@ Topic lessons
 Cultural information
 20 quiz questions
 XP rewards
+⚙️ Installation
+1️⃣ Clone the Repository
+git clone https://github.com/yourusername/mila.git
+
+cd mila
+💻 Frontend Setup (React)
+cd frontend
+
+npm install
+
+npm run dev
+
+Frontend runs on:
+
+http://localhost:5173
+🐍 Backend Setup (Flask)
+cd backend
+
+pip install -r requirements.txt
+
+python seed.py
+
+python app.py
+
+Backend runs on:
+
+http://localhost:5000
+🔗 Connecting Frontend and Backend
+
+The React frontend communicates with Flask through REST APIs.
+
+Example API base URL:
+
+const API_BASE = "http://localhost:5000/api";
+
+Example fetch request:
+
+fetch(`${API_BASE}/countries`)
+📡 API Endpoints
+Method	Endpoint	Description
+GET	/api/countries	Get all countries
+GET	/api/countries/:slug	Get single country
+GET	/api/questions/:slug	Get quiz questions
+POST	/api/auth/register	Register account
+POST	/api/auth/login	Login user
+GET	/api/auth/me	Current user
+POST	/api/progress	Save quiz progress
+🎨 Design Style
+
+Mila uses:
+
+Warm editorial colors
+Serif + modern typography
+Smooth animations
+Card-based layouts
+Gradient culture cards
+Instagram-inspired authentication pages
+🔮 Future Improvements
+Multiplayer quizzes
+Global leaderboard
+AI-generated cultural recommendations
+Audio pronunciation guides
+Dark mode
+Admin dashboard
+Cloud deployment
+👨‍💻 Team Roles
+Role	Responsibility
+Frontend Developer	React UI, pages, styling
+Backend Developer	Flask API, database
+Content Researcher	Cultural lessons & quizzes
+QA / Integration	Testing and deployment
+📜 License
+
+MIT License
+
+Free to use, modify, and distribute.
+
+🌍 Mila
+
+"Every culture has a story worth discovering."
