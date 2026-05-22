@@ -1,148 +1,153 @@
-Mila — World's Living Cultures
+# MILA-Culture Explorer 🌍
 
-A modern full-stack cultural learning platform where users explore traditions, food, history, arts, and folklore from around the world through interactive lessons, quizzes, achievements, and progress tracking.
+A modern React-based web application for discovering and exploring cultures around the world through food, history, traditions, and visual storytelling.
 
-🌐 About Mila
+---
 
-Mila is a full-stack cultural exploration website built with:
+# Overview
 
-React + Vite for the frontend
-Flask + Python for the backend
-HTML5 + CSS3 for styling and structure
-JavaScript (ES6+) for frontend logic
-SQLite / SQLAlchemy for data storage
+Culture Explorer is an interactive frontend application designed to help users learn about countries and their cultural identity through a visually immersive experience.
 
-The platform allows users to:
+The platform showcases:
 
-Discover cultures from different regions
-Read interactive topic lessons
-Take quizzes with explanations
-Earn XP and badges
-Track learning progress
-Create accounts and log in securely
+- Cultural landmarks
+- Traditional foods
+- Historical summaries
+- Art and traditions
+- Responsive country-based navigation
+- Interactive UI components
 
-Mila is a complete multi-page web application with separate frontend and backend architecture.
+---
 
-🧱 Project Structure
-Frontend
-Public assets
-React pages
-Components
-Styling and UI assets
-Application routing
-API integration
-Backend
-Flask server
-Database models
-API routes
-Seed data
-Authentication logic
-README documentation
-🚀 Features
-🌍 Cultural Exploration
-Explore cultures from 15+ countries
-Learn about:
-History
-Traditions
-Food
-Arts
-Folklore
-Language
-Festivals
-🧠 Quiz System
-20 quiz questions per country
-Randomized question generation
-Instant answer feedback
-Difficulty levels
-XP reward system
-👤 Authentication
-User registration
-Secure login system
-Logout functionality
-Persistent sessions
-📊 Dashboard
-XP tracking
-Quiz history
-Progress percentages
-Earnable badges
-Streak tracking
-📱 Responsive Design
-Mobile-friendly layout
-Modern UI inspired by Instagram and editorial travel apps
-Animated transitions
-Responsive navigation
-🛠 Tech Stack
-Layer	Technology
-Frontend	React + Vite
-Backend	Flask
-Database	SQLite
-Styling	CSS3
-Routing	React Router DOM
-API	REST API
-Authentication	Flask Sessions / JWT
-State Management	React Hooks
-📄 Website Pages
-Page	Purpose
-Home	Landing page and featured cultures
-Explore	Search and filter cultures
-Country Details	Lessons and culture topics
-Quiz	Interactive quiz engine
-Dashboard	User progress and achievements
-Login	Sign in page
-Register	Create account page
-🌎 Cultures Included
-Japan
-India
-Morocco
-Brazil
-France
-Kenya
-China
-Greece
-Italy
-Egypt
-Turkey
-South Korea
-Spain
-Algeria
-Mexico
+# Features
 
-Each country includes:
+## 🌎 Explore Countries
+Browse countries grouped by region including Africa, Asia, Europe, the Americas, and Oceania.
 
-Topic lessons
-Cultural information
-20 quiz questions
-XP rewards
-🎨 Design Style
+## 🖼️ Immersive Visual Design
+Each country card includes:
+- Cultural imagery
+- Landmark highlights
+- Hover animations
+- Responsive layouts
 
-Mila uses:
+## 🍲 Cultural Information
+Dedicated country pages display:
+- Famous meals
+- Traditions
+- Historical context
+- Art and cultural highlights
 
-Warm editorial colors
-Serif + modern typography
-Smooth animations
-Card-based layouts
-Gradient culture cards
-Instagram-inspired authentication pages
-🔮 Future Improvements
-Multiplayer quizzes
-Global leaderboard
-AI-generated cultural recommendations
-Audio pronunciation guides
-Dark mode
-Admin dashboard
-Cloud deployment
-👨‍💻 Team Roles
-Role	Responsibility
-Frontend Developer	React UI, pages, styling
-Backend Developer	Flask API, database
-Content Researcher	Cultural lessons & quizzes
-QA / Integration	Testing and deployment
-📜 License
+## ⚡ Dynamic Navigation
+Uses React Router for smooth client-side navigation between country pages.
 
-MIT License
+## 📱 Responsive UI
+Built with responsive CSS layouts using Grid and Flexbox for desktop and mobile support.
 
-Free to use, modify, and distribute.
+---
 
-🌍 Mila
+# Tech Stack
 
-"Every culture has a story worth discovering."
+| Technology | Purpose |
+|---|---|
+| React | Frontend framework |
+| Vite | Development/build tool |
+| React Router | Page navigation |
+| CSS3 | Styling and layouts |
+| JavaScript (ES6+) | Application logic |
+
+---
+
+# Project Structure
+
+```text
+culture-explorer/
+├── public/
+│
+├── src/
+│   ├── components/      
+│   ├── pages/           
+│   ├── styles/          
+│   ├── data/            
+│   ├── App.jsx          
+│   └── main.jsx         
+│
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+# Installation
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/wyllade/culture-explorer.git
+cd culture-explorer
+```
+
+---
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 3. Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will run at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# Key Frontend Concepts Used
+
+## Component-Based Architecture
+Reusable React components are used throughout the application for scalability and maintainability.
+
+## Dynamic Rendering
+Country cards and cultural content are generated dynamically from structured data objects.
+
+## Responsive Layout Design
+CSS Grid and Flexbox are used to create adaptive layouts across different screen sizes.
+
+## Client-Side Routing
+React Router enables smooth navigation without full page reloads.
+
+## Interactive User Experience
+Hover animations, image overlays, transitions, and visual hierarchy improve usability and engagement.
+
+---
+
+# Example UI Features
+
+- Country cards with animated hover effects
+- Image overlays with landmark badges
+- Dynamic country detail pages
+- Responsive grid layouts
+- Themed visual styling
+
+
+---
+
+# Contributors
+
+| Name | Contribution |
+|---|---|
+| Wyllade | Project development |
+| r4hmer | UI, frontend logic, cultural data |
+
+---
+
